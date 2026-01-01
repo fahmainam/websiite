@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./sidebar.scss']
 })
 export class SidebarComponent {
+  
   isSidebarCollapsed = false;
   openMenus: { [key: string]: boolean } = {};
 
@@ -77,9 +78,9 @@ export class SidebarComponent {
     }
   ];
 
-  toggleSidebar() {
-    this.isSidebarCollapsed = !this.isSidebarCollapsed;
-  }
+ toggleSidebar() {
+  this.isSidebarCollapsed = !this.isSidebarCollapsed;
+}
 
   toggleMenu(menuId: string) {
     // If sidebar is collapsed, expand it first when clicking a menu
@@ -95,4 +96,5 @@ export class SidebarComponent {
       this.isSidebarCollapsed = true;
     }
   }
+
 }

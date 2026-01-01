@@ -34,6 +34,14 @@ template: `
 export class App {
   title = signal('dashboard-admin');
   constructor(public themeService: ThemeService) {}
+
+    isSidebarCollapsed = false;
+    toggleSidebar(): void {
+      this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    
+    }
+    
+
 }
 
 

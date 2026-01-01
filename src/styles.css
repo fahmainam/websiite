@@ -3,13 +3,11 @@
     ========================= */
 
 body {
-  background: #f8f9fa;
+  background-color: #1a1b1e;
   color: #212529;
 }
-body.dark-theme {
-  background-color: #121212;
-  color: #eaeaea;
-}
+
+
 .dark-theme .app-header {
   background-color: #1e1e1e;
   border-bottom: 1px solid #333;
@@ -295,6 +293,13 @@ body.dark-theme .search-icon {
     background-color: #1e1e1e;
   }
 }
+@media (max-width: 768px) {
+  body:not(.dark-theme) #sidebar:not(.collapsed) {
+    left: 0 !important;
+    top: 192px !important;
+    box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+  }
+}
 /* ================================
    DONUT GRAPHIC
 ================================ */
@@ -570,10 +575,7 @@ body.dark-theme .rounded {
  
 } 
 
-body.dark-theme .main {
-  background-color: #121212;  
 
-}
 /* ==============================
    RESPONSIVE HEADER PADDING
    ============================== */
@@ -592,9 +594,9 @@ body.dark-theme .main-body-container {
   background-color: #121212;
 } 
 
-body.dark-theme .main {
-  background-color: #121212;  
-}   
+ body.dark-theme .main {
+  background-color: #121212;
+} 
 /* Overlay for mobile */
 .overlay {  
   display: none;
@@ -610,7 +612,20 @@ body.dark-theme #wrapper {
   min-height: 100vh;
   background-color: #020617;
 }
+body.dark-theme .nav-tabs .nav-link.active {
+    background-color: #231f1f!important;
+    color: #ffffff!important;
+    border: 1px solid #272930;
+}
+body.dark-theme .nav-tabs {
 
+   
+    border-bottom: 1px solid #4b4d53!important;
+    }
+    body.dark-theme #sidebar .sidebar-header {
+   
+     border-bottom: 1px solid #4b4d53!important;
+}
 /* ==============================
    SIDEBAR – DARK
    ============================== */
@@ -698,16 +713,14 @@ body.dark-theme #sidebar .nav-link:hover i {
 
 /* Active */
 body.dark-theme #sidebar .nav-link.active {
-  background-color: rgba(99, 102, 241, 0.18);
+  background-color: rgba(0, 0, 0, 0.18);
   color: #e0e7ff;
   font-weight: 600;
 }
 body.dark-theme .text-muted {
   color: #edeeef !important;
 }
-body.dark-theme #sidebar .nav-link.active i {
-  color: #6366f1;
-}
+
 
 /* ==============================
    TRANSITION ICON – DARK
@@ -723,7 +736,7 @@ body.dark-theme .submenu-container {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
-  background-color: #111827;
+  background-color: #1a1b1e;
 }
 
 body.dark-theme .submenu-container.show {
@@ -773,11 +786,50 @@ body.dark-theme .user-profile img {
 body.dark-theme .user-profile img:hover {
   transform: scale(1.05);
 }
-
+body.dark-theme .bg-dark{
+  background-color: #121212!important;
+}
+body.dark-theme .text {
+  font-size: 14px;
+  color: #ffffff!important;
+}
+body.dark-theme ul li span {
+  color: #e5e7eb!important;
+}
+body.dark-theme ul li i {
+  color: #e5e7eb!important;
+}
+body.dark-theme nav a {
+  color: #e5e7eb!important;
+}
+body.dark-theme nav button.btn  {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #ffffff;
+    box-shadow: none;
+    
+}
+body.dark-theme nav button i {
+  color: #e5e7eb!important;
+  padding: 0;
+  margin: 0;
+  
+}
+body.dark-theme .nav-link:hover {
+    background-color: #1b1515!important;
+    border-color: #555!important;
+}
+body.dark-theme .nav-link:active {
+    background-color: #1b1515!important;
+    border-color: #555!important;
+}
 /* ==============================
    MOBILE – DARK
    ============================== */
 @media (max-width: 768px) {
+  body.dark-theme .bg-dark{
+  background-color: #121212!important;
+}
   body.dark-theme #sidebar {
     position: fixed;
     height: 100vh;
@@ -789,10 +841,18 @@ body.dark-theme .user-profile img:hover {
   body.dark-theme #sidebar:not(.collapsed) {
     left: 0;
     box-shadow: 15px 0 35px rgba(0, 0, 0, 0.6);
+    top: 194px !important;
   }
 
-  body.dark-theme #sidebar.collapsed {
-    left: -100%;
+ body:not(.dark-theme) #sidebar.collapsed{
+    left: auto !important;
+    right: 0 !important;
+    top: 194px !important;
+  }
+  body.dark-theme #sidebar.collapsed{
+    left: auto !important;
+    right: 0 !important;
+    top: 194px !important;
   }
 
   body.dark-theme #wrapper {

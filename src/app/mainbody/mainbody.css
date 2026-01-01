@@ -4,6 +4,7 @@
 .main {
     display: flex;
     flex-direction: column;
+    background-color: #f8f9fa;
 }
 .pointar{
   cursor: pointer;
@@ -189,6 +190,10 @@ app-table {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .main-One{
+    padding-top: 171px!important;
+  }
+  
   .search-box {
     width: 100%;
   }

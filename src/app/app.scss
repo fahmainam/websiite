@@ -137,3 +137,63 @@ body {
    
 }
 }
+/* ==========================
+   SIDEBAR WIDTH RESPONSIVE
+   ========================== */
+.side-width {
+  width: 250px;           /* Default desktop width */
+  min-width: 250px;
+  max-width: 250px;
+  transition: width 0.3s ease;
+}
+
+/* COLLAPSED STATE */
+.side-width.collapsed {
+  width: 70px;            /* Collapsed width */
+  min-width: 70px;
+  max-width: 70px;
+}
+
+/* AUTO WIDTH ON MAIN CONTENT ADJUSTMENT */
+.main-content {
+  transition: margin-left 0.3s ease;
+  margin-left: 250px;     /* Match full sidebar */
+}
+
+.main-content.sidebar-collapsed {
+  margin-left: 70px;      /* Match collapsed sidebar */
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+   ========================== */
+@media (max-width: 992px) {   /* Tablet and below */
+  .side-width {
+    position: fixed;
+    top: 0;
+    left: -100%;            /* Hidden by default */
+    height: 100vh;
+    z-index: 1050;
+    width: 250px;           /* Mobile sidebar width */
+  }
+
+  .side-width:not(.collapsed) {
+    left: 0;                /* Slide in on toggle */
+  }
+
+  .main-content {
+    margin-left: 0;         /* Full width content under mobile sidebar */
+  }
+}
+
+/* Optional small devices for extra responsiveness */
+@media (max-width: 576px) {
+  .side-width {
+    width: 100%;            /* Take full width on extra small screens */
+    left: -100%;
+  }
+
+  .side-width:not(.collapsed) {
+    left: 0;
+  }
+}
