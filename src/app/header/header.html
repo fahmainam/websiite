@@ -1,0 +1,108 @@
+
+
+<div class="container-fluid p-0 m-0">
+    <header class="header">
+        <div class="logo col-sm-1"></div>
+        <div class="search-bar col-sm-12 col-md-12 col-lg-7 position-relative">
+            <input class="form-control form-control-sm ps-5 " type="text" placeholder="ابحث هنا...">
+            <div class="search-icon"></div>
+        </div>    
+    
+        <div ><app-profile-dropdown></app-profile-dropdown></div>
+   <div class="d-flex col-sm-2 gap-2 align-items-center justify-content-center">
+
+  <!-- Calendar -->
+  <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
+    <i class="bi bi-calendar-check-fill"></i>
+  </button>
+
+  <!-- Message -->
+  <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
+    <i class="bi bi-chat-right-dots-fill"></i>
+  </button>
+
+  <!-- Night Mode -->
+  <button  (click)="themeService.toggleTheme()" class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
+    <i class="bi"
+       [class.bi-moon]="!themeService.getTheme()"
+       [class.bi-sun]="themeService.getTheme()">
+    </i>
+  </button>
+
+  <!-- Notification -->
+  <!-- <button  class="btn btn-outline-secondary d-flex align-items-center justify-content-center position-relative">
+    <i class="bi bi-bell-fill"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      3
+    </span>
+  </button> -->
+<div class="dropdown notification-dropdown">
+
+  <button
+    class="btn btn-outline-secondary d-flex align-items-center justify-content-center position-relative"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <i class="bi bi-bell-fill"></i>
+
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      3
+    </span>
+  </button>
+
+  <div class="dropdown-menu dropdown-menu-end p-0 shadow notification-menu">
+
+    <!-- Header -->
+    <div class="dropdown-header d-flex justify-content-between align-items-center">
+      <span class="fw-semibold">الإشعارات</span>
+      <small class="text-muted">3 جديدة</small>
+    </div>
+
+    <!-- Notification item -->
+    <a href="#" class="dropdown-item notification-item unread">
+      <i class="bi bi-check-circle text-success"></i>
+      <div>
+        <p class="mb-0">تمت الموافقة على الطلب</p>
+        <small>قبل 5 دقائق</small>
+      </div>
+    </a>
+
+    <a href="#" class="dropdown-item notification-item unread">
+      <i class="bi bi-truck text-primary"></i>
+      <div>
+        <p class="mb-0">تم شحن الطلب</p>
+        <small>قبل 30 دقيقة</small>
+      </div>
+    </a>
+
+    <a href="#" class="dropdown-item notification-item">
+      <i class="bi bi-x-circle text-danger"></i>
+      <div>
+        <p class="mb-0">تم رفض الطلب</p>
+        <small>أمس</small>
+      </div>
+    </a>
+
+    <!-- Footer -->
+    <div class="dropdown-footer text-center">
+      <p class=" text-primary fw-normal">
+        عرض كل الإشعارات
+      </p>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+</header>
+<nav dir="rtl" class="bread" aria-label="breadcrumb">
+  <ol class="breadcrumb  ">
+    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+</div>
+

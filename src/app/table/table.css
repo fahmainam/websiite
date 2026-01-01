@@ -1,0 +1,166 @@
+/* ================================
+   CARD UPGRADE
+================================ */
+.card {
+  border: none;
+  border-radius: 16px;
+  
+  overflow: hidden;
+}
+
+.card-header {
+  background: transparent;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+/* ================================
+   TABLE STYLING
+================================ */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  background: #f8f9fa;
+  padding: 0.9rem 1rem;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Remove borders */
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #f1f3f5;
+}
+
+/* ================================
+   PRODUCT ICON
+================================ */
+.product-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.bg-primary-light {
+  background: rgba(13, 110, 253, 0.12);
+  color: #0d6efd;
+}
+
+.bg-success-light {
+  background: rgba(25, 135, 84, 0.12);
+  color: #198754;
+}
+
+.bg-warning-light {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.bg-info-light {
+  background: rgba(13, 202, 240, 0.15);
+  color: #0dcaf0;
+}
+
+/* ================================
+   STATUS DOTS
+================================ */
+.badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.badge-brand {
+  background: #fd7e14;
+}
+
+.badge-success {
+  background: #198754;
+}
+
+/* ================================
+   STATUS TEXT
+================================ */
+td:last-child {
+  font-weight: 500;
+}
+
+/* ================================
+   VIEW DETAILS ROW
+================================ */
+.table tbody tr:last-child td {
+  background: #fafbfc;
+  padding: 1rem;
+}
+
+.table tbody tr:last-child a {
+  font-size: 0.85rem;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+}
+
+/* ================================
+   RESPONSIVE TWEAKS
+================================ */
+@media (max-width: 992px) {
+  .table-responsive {
+    border-radius: 12px;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: block;
+    border-bottom: 1px solid #f1f3f5;
+    padding: 0.75rem 0;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6c757d;
+  }
+}
+
+/* ================================
+   OPTIONAL: STICKY HEADER
+================================ */
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}

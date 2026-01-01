@@ -1,0 +1,139 @@
+// Ensure the main container occupies the full viewport height
+.vh-100 {
+  height: 100vh;
+}
+
+// Fixed width for desktop, full width for mobile
+.sidebar-container {
+  min-width: 250px;
+  max-width: 250px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    height: auto; // Let it stack on mobile
+  }
+}
+
+// Prevent the whole page from scrolling; only the main content should scroll
+.overflow-auto {
+  overflow-y: auto;
+}
+
+// Remove gutter spacing between columns for a seamless dashboard look
+.g-0 {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+$sidebar-bg: #1e293b;
+$sidebar-active: #3b82f6;
+$text-color: #94a3b8;
+$white: #ffffff;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$sidebar-width: 260px;
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    overflow-x: hidden;
+}
+
+#sidebar {
+    width: $sidebar-width;
+    min-width: $sidebar-width;
+    background: $sidebar-bg;
+    color: $white;
+    transition: $transition;
+    height: 100vh;
+    position: fixed;
+    top: 135px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+
+    // LTR Default
+    right: 0; 
+    
+    // RTL Support
+    [dir="rtl"] & {
+        right: auto;
+        right: 0;
+    }
+}
+
+.sidebar-wrapper {
+    // Desktop Collapse Logic
+    &.collapsed #sidebar {
+        right: -$sidebar-width;
+        
+        [dir="rtl"] & {
+            right: auto;
+            right: -$sidebar-width;
+        }
+    }
+
+    // Mobile View Logic
+    @media (max-width: 1100px) {
+        #sidebar {
+            left: -$sidebar-width;
+            
+            [dir="rtl"] & {
+                right: auto;
+                right: -$sidebar-width;
+            }
+
+            &.active, &.mobile-active {
+                left: 0;
+                [dir="rtl"] & {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+// Logical Spacing for Sidebar Content
+#sidebar {
+    ul li a {
+        padding: 12px 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: $text-color;
+        text-decoration: none;
+
+        i { font-size: 1.2rem; }
+    }
+
+    // Submenu Indentation
+    #projectsSubmenu li a {
+        padding-inline-start: 55px; // Automatically handles LTR/RTL
+        font-size: 0.9rem;
+    }
+}
+
+// Dropdown Arrow RTL fix
+.dropdown-toggle::after {
+    margin-inline-start: auto; // Pushes arrow to the end regardless of direction
+}
+
+// Overlay Fix
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0; // Modern way to say left in LTR and right in RTL
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+
+    @media (min-width: 1100px) {
+        display: none;
+    }
+    #sidebar-wrapper {
+ 
+    top: 252px;
+   
+}
+}

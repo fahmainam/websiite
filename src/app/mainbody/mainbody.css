@@ -1,0 +1,419 @@
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.pointar{
+  cursor: pointer;
+}
+app-graph-one,
+
+app-table {
+  display: block;
+  width: 100%;
+}
+
+.nav-link.active {
+    font-weight: bolder !important;
+    color: #8a1538 !important;
+}
+.nav-tabs .nav-link {
+    color: #555555 !important;
+}                                       
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card .icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.stat-card .content h4 {
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.stat-card .content .title {
+  font-weight: 600;
+  margin: 4px 0;
+  color: #374151;
+}
+
+.stat-card .content span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card .icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.stat-card h4 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.stat-card .title {
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.stat-card span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.stat-card .icon.bg-blue {
+  background-color: #3b82f6;
+}
+@media screen and (max-width: 768px) {
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+    
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Search */
+.search-box {
+  position: relative;
+  width: 220px;
+}
+
+.search-box input {
+  padding-right: 2.2rem;
+}
+
+.search-box i {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+/* Table */
+.custom-table th {
+  font-size: 0.85rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.custom-table td {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* User */
+.user {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.user i {
+  font-size: 1.5rem;
+  color: #adb5bd;
+}
+
+/* Status Pills */
+.status-approved {
+  background: #e6f7ef;
+  color: #198754;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+.status-progress {
+  background: #fff4e5;
+  color: #fd7e14;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+/* Actions */
+.actions i {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  color: #6c757d;
+}
+
+.actions i:hover {
+  color: #0d6efd;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .search-box {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
+.body-bg{
+    background-color: #f8f9fa;
+}
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+.status-approved {
+  background: #e6f7ef;
+  color: #198754;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+.status-rejected {
+  background: #fdecec;
+  color: #dc3545;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+.status-progress {
+  background: #fff4e5;
+  color: #fd7e14;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+.status-pending {
+  background: #e7f1ff;
+  color: #0d6efd;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+}
+
+
+.display-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;      
+}
+/* =======================
+   Root / Containers
+======================= */
+.app-stats-card {
+  display: block;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.container-fluid.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* =======================
+   Stat Card
+======================= */
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  height: 250px; /* fixed height for carousel cards */
+  width: 100%;
+  min-width: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================
+   Card Top
+======================= */
+.label {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.amount {
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-card-title {
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.icon-wrapper,
+.stat-card .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: #f1f5ff;
+  color: #6f42c1;
+  font-size: 28px;
+}
+
+.stat-card .icon {
+  width: 64px;
+  height: 64px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* =======================
+   Card Bottom
+======================= */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f4f4f4;
+  border-radius: 0 0 14px 14px;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.trend-up {
+  color: #198754;
+}
+
+.trend-down {
+  color: #dc3545;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* =======================
+   Carousel
+======================= */
+.carousel-item {
+  width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+}
+
+/* =======================
+   Responsive Layout
+======================= */
+@media (max-width: 576px) {
+  /* Mobile: 1 card per slide */
+  .carousel-inner .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+     height: 190px;
+  }
+
+  .stat-card {
+    height: 240px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  /* Tablet: 2 cards per slide */
+  .carousel-inner .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+     height: 190px;
+  }
+
+  .stat-card {
+    height: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Desktop: 4 cards per slide */
+  .carousel-inner .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    height: 190px;
+  }
+
+  .stat-card {
+    height: 250px;
+  }
+}

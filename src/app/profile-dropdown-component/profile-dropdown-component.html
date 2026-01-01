@@ -1,0 +1,40 @@
+<div class="profile-wrapper" [dir]="'rtl'">
+  <button class="profile-btn d-flex align-items-center gap-2 border-0 bg-transparent w-100" 
+          [class.justify-content-center]="isCollapsed"
+          (click)="toggle()">
+    
+    <img [src]="user.image" class="avatar" alt="User Avatar" />
+    
+    @if (!isCollapsed) {
+      <div class="text text-end animate-fade-in">
+        <div class="name fw-bold small text-nowrap">{{ user.name }}</div>
+        <div class="dept text-muted smaller text-nowrap">{{ user.department }}</div>
+      </div>
+    }
+  </button>
+
+  <div class="dropdown-panel shadow shadow-sm" [class.open]="isOpen">
+    <div class="header d-flex align-items-center gap-3 p-3 text-end">
+      <img [src]="user.image" class="avatar-lg rounded-circle" />
+      <div>
+        <div class="name fw-bold fs-5">{{ user.name }}</div>
+        <div class="dept text-muted">{{ user.department }}</div>
+      </div>
+    </div>
+
+    <hr class="my-1" />
+
+    <div class="info-list p-3 text-end">
+      <div class="info mb-2 small">📞 {{ user.mobile }}</div>
+      <div class="info mb-2 small">✉️ {{ user.email }}</div>
+      <div class="info mb-2 small">🎂 العمر: {{ user.age }}</div>
+    </div>
+
+    <hr class="my-1" />
+
+    <div class="actions d-flex flex-column gap-2 p-3">
+      <button class="btn btn-primary btn-sm" (click)="editProfile()">تعديل الملف</button>
+      <button class="btn btn-outline-danger btn-sm" (click)="logout()">خروج</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,801 @@
+/* =========================
+   GLOBAL STYLES
+    ========================= */
+
+body {
+  background: #f8f9fa;
+  color: #212529;
+}
+body.dark-theme {
+  background-color: #121212;
+  color: #eaeaea;
+}
+.dark-theme .app-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+
+
+.dark-theme .card {
+  background-color: #1f1f1f;
+  border-color: #333;
+  color: #fff;
+}
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+.dark-theme input::placeholder {
+  color: #aaa;
+}
+.dark-theme .btn-outline-secondary {
+  color: #fff;
+  border-color: #555;
+}
+:host-context(.dark-theme) .icon {
+  color: #fff;
+}
+/* =========================
+   HEADER – DARK MODE
+   ========================= */
+
+/* Header & Breadcrumb */
+.dark-theme .header,
+.dark-theme .bread {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+/* Logo (optional dark logo swap) */
+.dark-theme .header .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* Breadcrumb */
+.dark-theme .breadcrumb-item,
+.dark-theme .breadcrumb-item a {
+  color: #cfcfcf;
+}
+
+/* Search Bar */
+body.dark-theme .header .search-bar input[type="search"] {
+ background-color: #111111 !important;
+  border: 1px solid #1f2937 !important;
+  color: #e5e7eb !important;
+}
+body.dark-theme .search-bar .search-icon {
+  filter: invert(1);
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dark-theme .header .search-bar input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Search icon (optional dark icon) */
+.dark-theme .header .search-bar .search-icon i {
+  color: #eaeaea;
+}
+
+/* User Name */
+.dark-theme .header .user-name {
+  color: #eaeaea;
+}
+
+.dark-theme .user-name .name {
+  color: #ffffff;
+}
+
+.dark-theme .user-name .position {
+  color: #aaaaaa;
+}
+
+/* Profile Image (optional darker tone) */
+.dark-theme .rounded-circle {
+  border: 1px solid #333;
+}
+
+/* Header Buttons */
+.dark-theme button.btn {
+  background-color: #2a2a2a;
+  border-color: #444;
+  box-shadow: none;
+}
+
+.dark-theme button.btn:hover {
+  background-color: #333;
+}
+
+/* Bootstrap Icons */
+.dark-theme .header i.bi {
+  color: #eaeaea;
+}
+
+/* =========================
+   NOTIFICATION DROPDOWN
+   ========================= */
+
+.dark-theme .notification-menu {
+  background-color: #1f1f1f;
+}
+
+.dark-theme .notification-menu .dropdown-header {
+  background-color: #1b1b1b;
+  border-bottom: 1px solid #333;
+  color: #ffffff;
+}
+
+.dark-theme .notification-item {
+  color: #eaeaea;
+}
+
+.dark-theme .notification-item small {
+  color: #aaaaaa;
+}
+
+/* Unread Highlight */
+.dark-theme .notification-item.unread {
+  background-color: #252f3f;
+}
+
+/* Hover */
+.dark-theme .notification-item:hover {
+  background-color: #2a2a2a;
+}
+
+/* Footer */
+.dark-theme .notification-menu .dropdown-footer {
+  background-color: #1b1b1b;
+  border-top: 1px solid #333;
+}
+
+/* =========================
+   BOOTSTRAP BUTTONS – DARK
+   ========================= */
+.dark-theme .btn {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #eaeaea;
+}
+
+.dark-theme .btn:hover {
+  background-color: #333;
+  border-color: #555;
+  color: #ffffff;
+}
+
+.dark-theme .btn-outline-secondary {
+  background-color: transparent;
+  border-color: #555;
+  color: #eaeaea;
+}
+
+.dark-theme .btn-outline-secondary:hover {
+  background-color: #333;
+  border-color: #666;
+}
+/* ==============================
+   HEADER & BREADCRUMB – DARK MODE
+   ============================== */
+body.dark-theme .header,
+body.dark-theme .bread {
+  background-color: #1e1e1e;
+  border-bottom-color: #333;
+}
+
+body.dark-theme .breadcrumb-item a {
+  color: #cfcfcf;
+}
+
+body.dark-theme .breadcrumb-item.active {
+  color: #ffffff;
+}
+
+/* ==============================
+   TEXT COLORS
+   ============================== */
+body.dark-theme .header .user-name,
+body.dark-theme .user-name .name {
+  color: #ffffff;
+}
+
+body.dark-theme .user-name .position {
+  color: #aaaaaa;
+}
+
+/* ==============================
+   SEARCH BAR INPUT
+   ============================== */
+
+
+
+/* ==============================
+   BUTTONS (Bootstrap + Custom)
+   ============================== */
+body.dark-theme button.btn {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+body.dark-theme button.btn:hover {
+  background-color: #333;
+  border-color: #555;
+}
+
+/* Bootstrap icons inside buttons */
+body.dark-theme button.btn i {
+  color: #ffffff;
+}
+
+/* ==============================
+   DROPDOWN MENU (Notifications)
+   ============================== */
+body.dark-theme .dropdown-menu {
+  background-color: #1f1f1f;
+  border-color: #333;
+}
+
+body.dark-theme .dropdown-header {
+  background-color: #1b1b1b;
+  border-bottom-color: #333;
+  color: #ffffff;
+}
+
+body.dark-theme .dropdown-item {
+  color: #eaeaea;
+}
+
+body.dark-theme .dropdown-item:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark-theme .notification-item.unread {
+  background-color: #243040;
+}
+
+body.dark-theme .notification-menu .dropdown-footer {
+  background-color: #1b1b1b;
+  border-top-color: #333;
+}
+
+/* Notification timestamps */
+body.dark-theme .notification-item small {
+  color: #aaaaaa;
+}
+
+/* ==============================
+   ICON-ONLY IMAGE BACKGROUNDS
+   (keep images, improve contrast)
+   ============================== */
+body.dark-theme .notification-icon,
+body.dark-theme .message-icon,
+body.dark-theme .calender-icon,
+body.dark-theme .night-icon,
+body.dark-theme .search-icon {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* ==============================
+   MOBILE SAFE (no layout changes)
+   ============================== */
+@media screen and (max-width: 768px) {
+  body.dark-theme .header {
+    background-color: #1e1e1e;
+  }
+}
+@media screen and (max-width: 768px) {
+  body.dark-theme .bread {
+    background-color: #1e1e1e;
+  }
+}
+/* ================================
+   DONUT GRAPHIC
+================================ */
+.donut {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 50%;                       
+    background: conic-gradient(
+        #3b82f6 0% 65%,
+        #e5e7eb 65% 100%
+    );  
+}       
+.donut::before {
+  content: "";
+  position: absolute;
+  inset: 25%;
+  background: #f8f9fa;
+  border-radius: 50%;
+}       
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}   
+.donut-center h3 {
+  margin: 0;
+  font-weight: 700;
+}   
+.donut-center span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+/* ================================
+   STAT CARDS
+================================ */                                         
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #eef1f4;
+  transition: all 0.2s ease;
+}   
+.stat-card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.stat-card i {
+  font-size: 1.4rem;
+  color: #6c757d;
+}
+.stat-card h5 {
+  margin: 0;
+  font-weight: 700;
+}   
+.stat-card .title {
+  font-weight: 600;
+  margin: 4px 0;
+}
+.stat-card span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.stat-card .icon.bg-blue {
+  background-color: #3b82f6;
+}
+@media screen and (max-width: 768px) {
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }   
+}   
+/* ================================
+   CARD STYLING                     
+================================ */
+.card {
+  background: #ffffff;
+  border: 1px solid #eef1f4;        
+    box-shadow: none;
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+.card-header {
+  background: transparent;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+.card-body {
+  padding: 1rem 1.25rem;
+}
+
+/* ================================
+   TABLE STYLING                            
+================================ */
+.table {
+  margin-bottom: 0;
+}
+.table thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  background: #f8f9fa;
+  padding: 0.9rem 1rem;
+  white-space: nowrap;
+}
+.table tbody td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.table tbody tr {
+  transition: background 0.2s ease;
+}
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+/* Remove borders */
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #f1f3f5;
+}
+/* ================================
+   PRODUCT ICON     
+================================ */
+.product-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+}   
+.product-icon.bg-blue {
+  background-color: #3b82f6;
+}
+.product-icon.bg-green {
+  background-color: #10b981;
+}
+.product-icon.bg-yellow {
+  background-color: #f59e0b;
+}
+.product-icon.bg-red {
+  background-color: #ef4444;
+}
+/* ================================
+   DONUT GRAPHIC
+================================ */
+.donut {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 50%;                       
+    background: conic-gradient(
+        #3b82f6 0% 65%,
+        #e5e7eb 65% 100%
+    );  
+}   
+.donut::before {
+  content: "";
+  position: absolute;
+  inset: 25%;
+  background: #f8f9fa;
+  border-radius: 50%;
+} 
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+.donut-center h3 {
+  margin: 0;
+  font-weight: 700;
+}
+.donut-center span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ==============================
+   STATS / BALANCE CARDS – DARK MODE
+   ============================== */
+
+body.dark-theme .stat-card,
+body.dark-theme .balance-card {
+  background-color: #1f1f1f;
+  border-color: #2f2f2f;
+  color: #ffffff;
+ 
+}
+
+/* Hover effect stays subtle */
+body.dark-theme .balance-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ==============================
+   LABELS & TEXT
+   ============================== */
+body.dark-theme .label,
+body.dark-theme .period {
+  color: #a1a1aa;
+}
+
+body.dark-theme .amount,
+body.dark-theme .stat-card-title,
+body.dark-theme .stats-card-title {
+  color: #ffffff;
+}
+
+/* ==============================
+   ICON WRAPPERS
+   ============================== */
+body.dark-theme .icon-wrapper {
+  background-color: #2a2a2a;
+  color: #c084fc; /* purple accent */
+}
+
+/* Balance card icons (separate tone) */
+body.dark-theme .balance-card .icon-wrapper {
+  background-color: #2b2b2b!important;
+  color: #fb7185;
+}
+
+/* ==============================
+   TRENDS (keep semantic colors)
+   ============================== */
+body.dark-theme .trend-up {
+  color: #22c55e;
+}
+
+body.dark-theme .trend-down {
+  color: #ef4444;
+}
+
+/* ==============================
+   DIVIDERS
+   ============================== */
+body.dark-theme .balance-card hr {
+  border-color: #333;
+}
+
+/* ==============================
+   CARD FOOTER / BOTTOM BAR
+   ============================== */
+body.dark-theme .card-bottom {
+  background-color: #262626;
+  border-top-color: #333;
+  color: #e5e7eb;
+  
+}
+body.dark-theme .card-bottom:hover {
+  background-color: #2a2a2a;
+}
+body.dark-theme .rounded {
+  border-radius: 14px 14px 14px 14px!important;
+ 
+} 
+
+body.dark-theme .main {
+  background-color: #121212;  
+
+}
+/* ==============================
+   RESPONSIVE HEADER PADDING
+   ============================== */
+@media screen and (max-width: 768px) {
+    .header{
+        padding-right: 20px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header{
+        padding-right: 50px;
+    }
+}
+
+body.dark-theme .main-body-container {
+  background-color: #121212;
+} 
+
+body.dark-theme .main {
+  background-color: #121212;  
+}   
+/* Overlay for mobile */
+.overlay {  
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1040;
+}
+/* ==============================
+   WRAPPER – DARK
+   ============================== */
+body.dark-theme #wrapper {
+  min-height: 100vh;
+  background-color: #020617;
+}
+
+/* ==============================
+   SIDEBAR – DARK
+   ============================== */
+body.dark-theme #sidebar {
+  min-width: 100%;
+  max-width: 100%;
+  width: 250px;
+  background-color: #1a1b1e;
+  color: #e5e7eb;
+  border-right: 1px solid #1f2937;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+/* ==============================
+   SIDEBAR COLLAPSED – DARK
+   ============================== */
+body.dark-theme #sidebar.collapsed {
+  min-width: 80px;
+  max-width: 80px;
+  width: 70px;
+}
+
+body.dark-theme #sidebar.collapsed .logo-text,
+body.dark-theme #sidebar.collapsed .ms-3,
+body.dark-theme #sidebar.collapsed .transition-icon,
+body.dark-theme #sidebar.collapsed .search-box,
+body.dark-theme #sidebar.collapsed .user-profile div,
+body.dark-theme #sidebar.collapsed .submenu-container,
+body.dark-theme #sidebar.collapsed span {
+  display: none;
+}
+
+body.dark-theme #sidebar.collapsed .nav-link {
+  justify-content: center !important;
+  padding: 12px 0;
+  color: #e5e7eb !important;
+  border-radius: 8px;
+  margin: 0;
+}
+
+body.dark-theme #sidebar.collapsed .user-profile {
+  justify-content: center;
+}
+
+/* ==============================
+   SIDEBAR HEADER – DARK
+   ============================== */
+body.dark-theme #sidebar .sidebar-header {
+  height: 70px;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* ==============================
+   NAV LINKS – DARK
+   ============================== */
+body.dark-theme #sidebar .nav-link {
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+body.dark-theme #sidebar .nav-link i {
+  min-width: 20px;
+  text-align: center;
+  color: #c7d2fe;
+}
+
+/* Hover */
+body.dark-theme #sidebar .nav-link:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+body.dark-theme #sidebar .nav-link:hover i {
+  color: #ffffff;
+}
+
+
+
+/* Active */
+body.dark-theme #sidebar .nav-link.active {
+  background-color: rgba(99, 102, 241, 0.18);
+  color: #e0e7ff;
+  font-weight: 600;
+}
+body.dark-theme .text-muted {
+  color: #edeeef !important;
+}
+body.dark-theme #sidebar .nav-link.active i {
+  color: #6366f1;
+}
+
+/* ==============================
+   TRANSITION ICON – DARK
+   ============================== */
+body.dark-theme .transition-icon {
+  transition: transform 0.3s ease;
+}
+
+/* ==============================
+   SUBMENU – DARK
+   ============================== */
+body.dark-theme .submenu-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  background-color: #111827;
+}
+
+body.dark-theme .submenu-container.show {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+body.dark-theme .submenu-container a {
+  padding-left: 1rem;
+  color: #94a3b8;
+}
+
+body.dark-theme .submenu-container a:hover {
+  color: #e0e7ff !important;
+  background-color: #1e293b;
+  text-decoration: none !important;
+}
+
+/* ==============================
+   SEARCH BOX – DARK
+   ============================== */
+body.dark-theme .sidebar .search-box input {
+  background-color: #111111 !important;
+  border: 1px solid #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+
+body.dark-theme .search-box input::placeholder {
+  color: #64748b;
+}
+
+body.dark-theme .search-box input:focus {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+  background-color: #020617 !important;
+  border: 1px solid #6366f1 !important;
+}
+
+/* ==============================
+   USER PROFILE – DARK
+   ============================== */
+body.dark-theme .user-profile img {
+  border: 2px solid #1f2937;
+  transition: transform 0.2s;
+}
+
+body.dark-theme .user-profile img:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+   MOBILE – DARK
+   ============================== */
+@media (max-width: 768px) {
+  body.dark-theme #sidebar {
+    position: fixed;
+    height: 100vh;
+    left: -100%;
+    margin-left: 0;
+    background-color: #020617;
+  }
+
+  body.dark-theme #sidebar:not(.collapsed) {
+    left: 0;
+    box-shadow: 15px 0 35px rgba(0, 0, 0, 0.6);
+  }
+
+  body.dark-theme #sidebar.collapsed {
+    left: -100%;
+  }
+
+  body.dark-theme #wrapper {
+    min-height: fit-content;
+  }
+}

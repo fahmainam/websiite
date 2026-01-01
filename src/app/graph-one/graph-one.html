@@ -1,0 +1,270 @@
+<!-- <p>graph-one works!</p> -->
+<div class="container my-4">
+
+  <!-- Card -->
+  <div class="card dashboard-card shadow-sm">
+
+    <!-- Header -->
+    <div class="card-header dashboard-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-tag fs-5"></i>
+        <h5 class="mb-0 fw-bold">حالة المشتريات</h5>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-secondary  btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+        <button class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-funnel"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="dashboard-filters">
+      <div class="filter-pill">
+        <i class="bi bi-calendar"></i>
+        يوليو 2025
+      </div>
+
+      <div class="filter-pill">
+        جميع الفئات
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="card-body">
+      <div class="row align-items-center">
+
+        <!-- Donut -->
+        <div class="col-lg-5 text-center mb-4 mb-lg-0">
+          <div class="donut-wrapper">
+            <div class="donut">
+              <div class="donut-center">
+                <h4 class="fw-bold mb-0">350</h4>
+                <small class="text-muted">كل المعاملات</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="col-lg-7">
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-grid"></i>
+                <div>
+                  <small class="graph-text">كل</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-stars"></i>
+                <div>
+                  <small class="graph-text">New</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-clock"></i>
+                <div>
+                  <small class="graph-text">قيد الانتظار</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-truck"></i>
+                <div>
+                  <small class="graph-text">تم الإرسال</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-check-circle"></i>
+                <div>
+                  <small class="graph-text">تم التوصيل</small>
+                  <h5>123</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-x-circle"></i>
+                <div>
+                  <small class="graph-text">تم الإلغاء</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- End of container -->
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+      <div class="modal-body">
+        <div class="container my-4">
+        <div class="card dashboard-card">
+
+    <!-- Header -->
+    <div class="card-header dashboard-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-tag fs-5"></i>
+        <h5 class="mb-0 fw-bold">حالة المشتريات</h5>
+      </div>
+
+      <div class="d-flex gap-2">
+         <button class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-funnel"></i>
+        </button>
+        <button class="btn btn-outline-secondary  btn-sm" data-bs-dismiss="modal">
+         <i class="bi bi-x-square"></i>
+        </button>
+       
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="dashboard-filters">
+      <div class="filter-pill">
+        <i class="bi bi-calendar"></i>
+        يوليو 2025
+      </div>
+
+      <div class="filter-pill">
+        جميع الفئات
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="card-body">
+      <div class="row align-items-center">
+
+        <!-- Donut -->
+        <div class="col-lg-5 text-center mb-4 mb-lg-0">
+          <div class="donut-wrapper">
+            <div class="donut">
+              <div class="donut-center">
+                <h4 class="fw-bold mb-0">350</h4>
+                <small class="text-muted">كل المعاملات</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="col-lg-7">
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-grid"></i>
+                <div>
+                  <small>كل</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-stars"></i>
+                <div>
+                  <small>New</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-clock"></i>
+                <div>
+                  <small>قيد الانتظار</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-truck"></i>
+                <div>
+                  <small>تم الإرسال</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-check-circle"></i>
+                <div>
+                  <small>تم التوصيل</small>
+                  <h5>123</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stat-card">
+                <i class="bi bi-x-circle"></i>
+                <div>
+                  <small>تم الإلغاء</small>
+                  <h5>50</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

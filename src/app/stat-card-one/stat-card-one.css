@@ -1,0 +1,238 @@
+/* =======================
+   Root / Containers
+======================= */
+.app-stats-card {
+  display: block;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.container-fluid.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* =======================
+   Stat Card
+======================= */
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================
+   Card Top
+======================= */
+.label {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.amount {
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-card-title {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.5vw, 0.5rem) !important;
+}
+
+.icon-wrapper,
+.stat-card .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: #f1f5ff;
+  color: #6f42c1;
+  font-size: 28px;
+}
+
+.stat-card .icon {
+  width: 64px;
+  height: 64px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* =======================
+   Card Content
+======================= */
+.content h4 {
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.content .title {
+  font-weight: 600;
+  margin: 4px 0;
+  color: #374151;
+}
+
+.content span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* =======================
+   Card Bottom
+======================= */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f4f4f4;
+  border-radius: 0 0 14px 14px;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.trend-up {
+  color: #198754;
+}
+
+.trend-down {
+  color: #dc3545;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* =======================
+   Balance Card (Optional)
+======================= */
+.balance-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #eef0f4;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.balance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.balance-card .label {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.balance-card .amount {
+  font-weight: 700;
+  color: #111827;
+}
+
+.balance-card hr {
+  margin: 16px 0;
+  border-color: #e5e7eb;
+}
+
+/* =======================
+   Carousel
+======================= */
+.carousel-item {
+  width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="#000" d="M5.5 0L4.78.72 1.56 4l3.22 3.28L5.5 8l4-4-4-4z"/></svg>');
+}
+
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="#000" d="M2.5 0L1.78.72 4.99 4l-3.21 3.28L2.5 8l4-4-4-4z"/></svg>');
+}
+
+/* =======================
+   Slider Buttons
+======================= */
+.slider-btn-prev,
+.slider-btn-next {
+  position: absolute;
+  top: 60px;
+  height: 30px;
+  width: 30px;
+  color: black;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.slider-btn-next {
+  right: 0;
+}
+
+.slider-btn-prev:hover,
+.slider-btn-next:hover {
+  background-color: #f0f0f0 !important;
+  cursor: pointer;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media screen and (max-width: 990px) {
+  .carousel-inner {
+    height: 176px!important;
+    width: 100%;
+  }
+
+
+}
+

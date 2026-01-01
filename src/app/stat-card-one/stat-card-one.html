@@ -1,0 +1,66 @@
+<div
+  id="statsCarousel"
+  class="carousel slide w-100"
+  data-bs-ride="carousel"
+  *ngIf="slides && slides.length"
+>
+  <div class="carousel-inner">
+
+    <div
+      class="carousel-item"
+      *ngFor="let slide of slides; let i = index"
+      [ngClass]="{ active: i === 0 }"
+    >
+
+      <div class="container-fluid px-0">
+        <div class="row g-3 ">
+
+          <div
+            class="col-12 col-sm-12 col-lg-3 col-md-6"
+            *ngFor="let card of slide"
+          >
+            <div class="stat-card h-100 d-flex flex-column  rounded-md shadow-sm">
+
+              <!-- Top: text left, icon right -->
+              <div class="d-flex justify-content-between p-3 align-items-start mb-3">
+                <div class="flex-grow-1 pe-2">
+                  <p class="label mb-1">{{ card.label }}</p>
+                  <h4 class="amount mb-0 stat-card-title">{{ card.amount }}</h4>
+                </div>
+
+                <div class="icon-wrapper d-flex align-items-center justify-content-center">
+                  <i class="bi" [ngClass]="card.icon"></i>
+                </div>
+              </div>
+
+              <!-- Bottom: trend right, period left -->
+              <div class="card-bottom   p-2">
+                <span class="period mb-0">{{ card.period }}</span>
+                <div class="trend d-flex align-items-center gap-1" [ngClass]="getTrendClass(card)">
+                  <i class="bi" [ngClass]="getTrendIcon(card)"></i>
+                  <span>{{ card.trendValue }}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev slider-btn-prev" type="button" data-bs-target="#statsCarousel" data-bs-slide="prev">
+    <span><i class="bi bi-chevron-left"></i></span>
+  </button>
+  <button class="carousel-control-next slider-btn-next" type="button" data-bs-target="#statsCarousel" data-bs-slide="next">
+    <span><i class="bi bi-chevron-right"></i></span>
+  </button>
+</div>
+
+<!-- No slides fallback -->
+<div *ngIf="!slides || slides.length === 0" class="text-center py-5">
+  <p class="text-muted">No statistics available.</p>  
+</div>

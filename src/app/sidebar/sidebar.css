@@ -1,0 +1,186 @@
+/* ==============================
+   WRAPPER – LIGHT MODE ONLY
+   ============================== */
+body:not(.dark-theme) #wrapper {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* ==============================
+   SIDEBAR – LIGHT MODE ONLY
+   ============================== */
+body:not(.dark-theme) #sidebar {
+  min-width: 100%;
+  max-width: 100%;
+  width: 250px;
+  background: #ffffff;
+  color: #334155;
+  border-right: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+/* ==============================
+   COLLAPSED SIDEBAR – LIGHT
+   ============================== */
+body:not(.dark-theme) #sidebar.collapsed {
+  min-width: 80px;
+  max-width: 80px;
+  width: 70px;
+}
+
+body:not(.dark-theme) #sidebar.collapsed .logo-text,
+body:not(.dark-theme) #sidebar.collapsed .ms-3,
+body:not(.dark-theme) #sidebar.collapsed .transition-icon,
+body:not(.dark-theme) #sidebar.collapsed .search-box,
+body:not(.dark-theme) #sidebar.collapsed .user-profile div,
+body:not(.dark-theme) #sidebar.collapsed .submenu-container,
+body:not(.dark-theme) #sidebar.collapsed span {
+  display: none;
+}
+
+body:not(.dark-theme) #sidebar.collapsed .nav-link {
+  justify-content: center !important;
+  padding: 12px 0;
+  border-radius: 8px;
+  margin: 0;
+}
+
+body:not(.dark-theme) #sidebar.collapsed .user-profile {
+  justify-content: center;
+}
+
+/* ==============================
+   SUBMENU LINKS – LIGHT
+   ============================== */
+body:not(.dark-theme) .submenu-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+body:not(.dark-theme) .submenu-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==============================
+   SIDEBAR HEADER – LIGHT
+   ============================== */
+body:not(.dark-theme) #sidebar .sidebar-header {
+  height: 70px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* ==============================
+   NAV LINKS – LIGHT
+   ============================== */
+body:not(.dark-theme) #sidebar .nav-link {
+  color: #334155;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+body:not(.dark-theme) #sidebar .nav-link i {
+  min-width: 20px;
+  text-align: center;
+}
+
+body:not(.dark-theme) #sidebar .nav-link:hover {
+  background-color: #f1f5f9;
+  color: #4f46e5 !important;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* ==============================
+   TRANSITION ICON – LIGHT
+   ============================== */
+body:not(.dark-theme) .transition-icon {
+  transition: transform 0.3s ease;
+}
+
+/* ==============================
+   SUBMENU CONTAINER – LIGHT
+   ============================== */
+body:not(.dark-theme) .submenu-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  background-color: #fafafa;
+}
+
+body:not(.dark-theme) .submenu-container.show {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+body:not(.dark-theme) .submenu-container a {
+  padding-left: 1rem;
+}
+
+body:not(.dark-theme) .submenu-container a:hover {
+  color: #4f46e5 !important;
+  text-decoration: underline !important;
+}
+
+/* ==============================
+   SEARCH BOX – LIGHT
+   ============================== */
+body:not(.dark-theme) .search-box input {
+  height: 38px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+body:not(.dark-theme) .search-box input:focus {
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  background-color: #ffffff !important;
+  border: 1px solid #4f46e5 !important;
+}
+
+/* ==============================
+   USER PROFILE – LIGHT
+   ============================== */
+body:not(.dark-theme) .user-profile img {
+  border: 2px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+body:not(.dark-theme) .user-profile img:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+   MOBILE – LIGHT
+   ============================== */
+@media (max-width: 768px) {
+  body:not(.dark-theme) #sidebar {
+    position: fixed;
+    height: 100vh;
+    left: -100%;
+    margin-left: 0;
+  }
+
+  body:not(.dark-theme) #sidebar:not(.collapsed) {
+    left: 0;
+    box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+  }
+
+  body:not(.dark-theme) #sidebar.collapsed {
+    left: -100%;
+  }
+
+  body:not(.dark-theme) #page-content-wrapper {
+    width: 100% !important;
+  }
+
+  body:not(.dark-theme) #wrapper {
+    min-height: fit-content;
+  }
+}
