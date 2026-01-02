@@ -46,12 +46,14 @@ body {
 .dark-theme .header,
 .dark-theme .bread {
   background-color: #1e1e1e;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #333!important;
+  
+  
 }
 
 /* Logo (optional dark logo swap) */
-.dark-theme .header .logo img {
-  filter: brightness(0) invert(1);
+.dark-theme div .logo {
+   filter: invert(1)!important;
 }
 
 /* Breadcrumb */
@@ -184,6 +186,7 @@ body.dark-theme .header,
 body.dark-theme .bread {
   background-color: #1e1e1e;
   border-bottom-color: #333;
+ 
 }
 
 body.dark-theme .breadcrumb-item a {
@@ -597,6 +600,17 @@ body.dark-theme .main-body-container {
  body.dark-theme .main {
   background-color: #121212;
 } 
+body.dark-theme .main-One{
+    
+    background-color: #121212;
+  }
+  body.dark-theme .breadcrumb-container{
+    
+    background-color: #121212;
+    border-bottom: 1px solid #333;
+    
+    padding: 10px 20px;
+  }
 /* Overlay for mobile */
 .overlay {  
   display: none;
@@ -841,7 +855,7 @@ body.dark-theme .nav-link:active {
   body.dark-theme #sidebar:not(.collapsed) {
     left: 0;
     box-shadow: 15px 0 35px rgba(0, 0, 0, 0.6);
-    top: 194px !important;
+    top: 216px !important;
   }
 
  body:not(.dark-theme) #sidebar.collapsed{
@@ -858,4 +872,182 @@ body.dark-theme .nav-link:active {
   body.dark-theme #wrapper {
     min-height: fit-content;
   }
+}
+/* ================================
+   CARD – DARK THEME
+================================ */
+body.dark-theme .card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+body.dark-theme .card-header {
+  background: transparent;
+  color: #e5e7eb;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* ================================
+   TABLE – DARK THEME
+================================ */
+body.dark-theme .table {
+  margin-bottom: 0;
+  color: #e5e7eb;
+}
+
+body.dark-theme .table thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  background: #020617;
+  padding: 0.9rem 1rem;
+  white-space: nowrap;
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme .table tbody td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-color: #1e293b;
+}
+
+body.dark-theme .table tbody tr {
+  transition: background 0.2s ease;
+  background-color: #121212!important;
+}
+
+body.dark-theme .table tbody tr:hover {
+  background: #020617;
+}
+
+/* Remove borders */
+body.dark-theme .table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #1e293b;
+}
+
+/* ================================
+   PRODUCT ICON – DARK
+================================ */
+body.dark-theme .product-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+body.dark-theme .bg-primary-light {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+body.dark-theme .bg-success-light {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+body.dark-theme .bg-warning-light {
+  background: rgba(250, 204, 21, 0.15);
+  color: #fde047;
+}
+
+body.dark-theme .bg-info-light {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+/* ================================
+   STATUS DOTS – DARK
+================================ */
+body.dark-theme .badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+body.dark-theme .badge-brand {
+  background: #fb923c;
+}
+
+body.dark-theme .badge-success {
+  background: #22c55e;
+}
+
+/* ================================
+   STATUS TEXT
+================================ */
+body.dark-theme td:last-child {
+  font-weight: 500;
+}
+
+/* ================================
+   VIEW DETAILS ROW – DARK
+================================ */
+body.dark-theme .table tbody tr:last-child td {
+  background: #020617;
+  padding: 1rem;
+}
+
+body.dark-theme .table tbody tr:last-child a {
+  font-size: 0.85rem;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  color: #60a5fa;
+}
+body.dark-theme .body-bg{
+    background-color: #1e1e1e;
+} 
+/* ================================
+   RESPONSIVE – DARK
+================================ */
+@media (max-width: 992px) {
+  body.dark-theme .table-responsive {
+    border-radius: 12px;
+  }
+
+  body.dark-theme .table thead {
+     display: block;
+    border-bottom: 1px solid #1e293b!important;
+    padding: 0.75rem 0;
+    color: #ffffff;
+    
+  }
+
+  body.dark-theme .table tbody tr {
+    display: block;
+    border-bottom: 1px solid #1e293b!important;
+    padding: 0.75rem 0;
+  }
+
+  body.dark-theme .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  body.dark-theme .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #94a3b8;
+  }
+}
+
+/* ================================
+   STICKY HEADER – DARK
+================================ */
+body.dark-theme .table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }

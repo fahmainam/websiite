@@ -1,107 +1,84 @@
-
 <div class="container-fluid p-0 m-0">
-    <header class="header">
-        <div class="logo col-sm-1"></div>
-        <div class="search-bar col-sm-12 col-md-12 col-lg-7 position-relative">
-            <input class="form-control form-control-sm ps-5 " type="text" placeholder="ابحث هنا...">
-            <div class="search-icon"></div>
-        </div>    
-    
-        <div ><app-profile-dropdown></app-profile-dropdown></div>
-   <div class="d-flex col-sm-2 gap-2 align-items-center justify-content-center">
 
-  <!-- Calendar -->
-  <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
-    <i class="bi bi-calendar-check-fill"></i>
-  </button>
+  <!-- HEADER -->
+  <header class="header border-bottom ">
+    <div class="row g-2 align-items-center   px-3 py-2">
 
-  <!-- Message -->
-  <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
-    <i class="bi bi-chat-right-dots-fill"></i>
-  </button>
+      <!-- LOGO -->
+      <div class="col-12 col-lg-2 d-flex justify-content-end justify-content-lg-start">
+        <div class="logo">
+        </div>
+      </div>
 
-  <!-- Night Mode -->
-  <button  (click)="themeService.toggleTheme()" class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
-    <i class="bi"
-       [class.bi-moon]="!themeService.getTheme()"
-       [class.bi-sun]="themeService.getTheme()">
-    </i>
-  </button>
+      <!-- SEARCH BAR -->
+      <div class="col-12 col-lg-6 position-relative">
+        <input
+          class="form-control form-control-sm ps-5"
+          type="text"
+          placeholder="ابحث هنا..."
+        />
+        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+      </div>
 
-  <!-- Notification -->
-  <!-- <button  class="btn btn-outline-secondary d-flex align-items-center justify-content-center position-relative">
-    <i class="bi bi-bell-fill"></i>
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      3
-    </span>
-  </button> -->
-<div class="dropdown notification-dropdown">
+      <!-- PROFILE -->
+      <div class="col-6 col-lg-2 d-flex justify-content-start justify-content-lg-center">
+        <app-profile-dropdown></app-profile-dropdown>
+      </div>
 
-  <button
-    class="btn btn-outline-secondary d-flex align-items-center justify-content-center position-relative"
-    type="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <i class="bi bi-bell-fill"></i>
+      <!-- ICON SET -->
+      <div class="col-6 col-lg-2 d-flex gap-2 justify-content-end align-items-center">
 
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      3
-    </span>
-  </button>
+        <button class="btn btn-outline-secondary">
+          <i class="bi bi-calendar-check-fill"></i>
+        </button>
 
-  <div class="dropdown-menu dropdown-menu-end p-0 shadow notification-menu">
+        <button class="btn btn-outline-secondary">
+          <i class="bi bi-chat-right-dots-fill"></i>
+        </button>
 
-    <!-- Header -->
-    <div class="dropdown-header d-flex justify-content-between align-items-center">
-      <span class="fw-semibold">الإشعارات</span>
-      <small class="text-muted">3 جديدة</small>
+        <button
+          class="btn btn-outline-secondary"
+          (click)="themeService.toggleTheme()"
+        >
+          <i
+            class="bi"
+            [class.bi-moon]="!themeService.getTheme()"
+            [class.bi-sun]="themeService.getTheme()"
+          ></i>
+        </button>
+
+        <!-- NOTIFICATION -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-secondary position-relative"
+            data-bs-toggle="dropdown"
+          >
+            <i class="bi bi-bell-fill"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+            </span>
+          </button>
+
+          <div class="dropdown-menu dropdown-menu-end shadow p-0">
+            <div class="dropdown-header fw-semibold">الإشعارات</div>
+            <a class="dropdown-item">تمت الموافقة على الطلب</a>
+            <a class="dropdown-item">تم شحن الطلب</a>
+            <a class="dropdown-item">تم رفض الطلب</a>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </header>
 
-    <!-- Notification item -->
-    <a href="#" class="dropdown-item notification-item unread">
-      <i class="bi bi-check-circle text-success"></i>
-      <div>
-        <p class="mb-0">تمت الموافقة على الطلب</p>
-        <small>قبل 5 دقائق</small>
-      </div>
-    </a>
-
-    <a href="#" class="dropdown-item notification-item unread">
-      <i class="bi bi-truck text-primary"></i>
-      <div>
-        <p class="mb-0">تم شحن الطلب</p>
-        <small>قبل 30 دقيقة</small>
-      </div>
-    </a>
-
-    <a href="#" class="dropdown-item notification-item">
-      <i class="bi bi-x-circle text-danger"></i>
-      <div>
-        <p class="mb-0">تم رفض الطلب</p>
-        <small>أمس</small>
-      </div>
-    </a>
-
-    <!-- Footer -->
-    <div class="dropdown-footer text-center">
-      <p class=" text-primary fw-normal">
-        عرض كل الإشعارات
-      </p>
-    </div>
-
-  </div>
-</div>
+  <!-- BREADCRUMB -->
+  <nav dir="rtl" class="breadcrumb-container px-3 py-2">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active">Data</li>
+    </ol>
+  </nav>
 
 </div>
-
-</header>
-<nav dir="rtl" class="bread" aria-label="breadcrumb">
-  <ol class="breadcrumb  ">
-    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
-  </ol>
-</nav>
-</div>
-

@@ -59,7 +59,7 @@
    SIDEBAR HEADER
    ============================== */
 #sidebar .sidebar-header {
-    height: 70px;
+    height: 60px;
     border-bottom: 1px solid #f1f5f9;
 }
 
@@ -151,7 +151,7 @@
         position: fixed;
         height: 100vh;
         left: -100%;
-        top: 192px !important;
+        top: 216px !important;
     }
 
     #sidebar:not(.collapsed) {

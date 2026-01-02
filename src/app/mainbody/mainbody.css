@@ -187,7 +187,9 @@ app-table {
 .actions i:hover {
   color: #0d6efd;
 }
-
+.main-One{
+  background-color: #f8f9fa;
+}
 /* Mobile */
 @media (max-width: 768px) {
   .main-One{
@@ -258,6 +260,8 @@ app-table {
   display: flex;
   width: 100%;
   gap: 16px;
+      padding-top: 11px;
+      padding-right: 0px!important;
 }
 
 .container-fluid.px-0 {
