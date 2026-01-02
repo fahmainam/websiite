@@ -300,7 +300,7 @@ body.dark-theme .search-icon {
   body.dark-theme #sidebar:not(.collapsed) {
     left: 0 !important;
     top: 192px !important;
-    box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 0 25px rgba(37, 35, 35, 0.1);
   }
 }
 /* ================================
@@ -647,7 +647,7 @@ body.dark-theme #sidebar {
   min-width: 100%;
   max-width: 100%;
   width: 250px;
-  background-color: #1a1b1e;
+  background-color: #1c1c1c;
   color: #e5e7eb;
   border-right: 1px solid #1f2937;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -854,8 +854,9 @@ body.dark-theme .nav-link:active {
 
   body.dark-theme #sidebar:not(.collapsed) {
     left: 0;
-    box-shadow: 15px 0 35px rgba(0, 0, 0, 0.6);
+    box-shadow: 15px 0 35px rgba(46, 45, 45, 0.6);
     top: 216px !important;
+    background-color: #212121!important;
   }
 
  body:not(.dark-theme) #sidebar.collapsed{
@@ -866,7 +867,8 @@ body.dark-theme .nav-link:active {
   body.dark-theme #sidebar.collapsed{
     left: auto !important;
     right: 0 !important;
-    top: 194px !important;
+    top: 211px !important;
+    background-color: #212121!important;
   }
 
   body.dark-theme #wrapper {
