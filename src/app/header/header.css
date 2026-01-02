@@ -43,6 +43,11 @@
     top: 0;
     height: 91px;
     z-index: 10000;
+    position: fixed;
+    width: calc(100%);
+    
+    
+    
     
 }
 .breadcrumb-container {

@@ -1,14 +1,13 @@
-
-
-
 .main {
-    display: flex;
-    flex-direction: column;
-    background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
 }
-.pointar{
+
+.pointar {
   cursor: pointer;
 }
+
 app-graph-one,
 
 app-table {
@@ -17,12 +16,14 @@ app-table {
 }
 
 .nav-link.active {
-    font-weight: bolder !important;
-    color: #8a1538 !important;
+  font-weight: bolder !important;
+  color: #8a1538 !important;
 }
+
 .nav-tabs .nav-link {
-    color: #555555 !important;
-}                                       
+  color: #555555 !important;
+}
+
 .stat-card {
   background: #ffffff;
   border-radius: 14px;
@@ -65,6 +66,7 @@ app-table {
   font-size: 0.85rem;
   color: #6b7280;
 }
+
 .stat-card {
   background: #ffffff;
   border-radius: 14px;
@@ -106,16 +108,18 @@ app-table {
   font-size: 0.85rem;
   color: #6b7280;
 }
+
 .stat-card .icon.bg-blue {
   background-color: #3b82f6;
 }
+
 @media screen and (max-width: 768px) {
   .stat-card {
     flex-direction: column;
     text-align: center;
     width: 100%;
   }
-    
+
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -187,13 +191,16 @@ app-table {
 .actions i:hover {
   color: #0d6efd;
 }
-.main-One{
+
+.main-One {
   background-color: #f8f9fa;
 }
+
 /* Mobile */
 @media (max-width: 768px) {
+
  
-  
+
   .search-box {
     width: 100%;
   }
@@ -202,8 +209,9 @@ app-table {
     font-size: 0.85rem;
   }
 }
-.body-bg{
-    background-color: #f8f9fa;
+
+.body-bg {
+  background-color: #f8f9fa;
 }
 
 
@@ -244,8 +252,9 @@ app-table {
 .display-flex-center {
   display: flex;
   align-items: center;
-  justify-content: center;      
+  justify-content: center;
 }
+
 /* =======================
    Root / Containers
 ======================= */
@@ -258,8 +267,8 @@ app-table {
   display: flex;
   width: 100%;
   gap: 16px;
-      padding-top: 11px;
-      padding-right: 0px!important;
+  padding-top: 11px;
+  padding-right: 0px !important;
 }
 
 .container-fluid.px-0 {
@@ -278,7 +287,8 @@ app-table {
   justify-content: space-between;
   align-items: stretch;
   gap: 16px;
-  height: 250px; /* fixed height for carousel cards */
+  height: 250px;
+  /* fixed height for carousel cards */
   width: 100%;
   min-width: 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -387,24 +397,33 @@ app-table {
    Responsive Layout
 ======================= */
 @media (max-width: 576px) {
+
   /* Mobile: 1 card per slide */
   .carousel-inner .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
-     height: 190px;
+    height: 190px;
   }
+.main {
+  display: flex;
 
+  width: 100%;
+  gap: 16px;
+  padding-top: 91px;
+  padding-right: 0px !important;
+}
   .stat-card {
     height: 240px;
   }
 }
 
 @media (min-width: 577px) and (max-width: 991px) {
+
   /* Tablet: 2 cards per slide */
   .carousel-inner .col-sm-6 {
     flex: 0 0 50%;
     max-width: 50%;
-     height: 190px;
+    height: 190px;
   }
 
   .stat-card {
@@ -413,6 +432,7 @@ app-table {
 }
 
 @media (min-width: 992px) {
+
   /* Desktop: 4 cards per slide */
   .carousel-inner .col-lg-3 {
     flex: 0 0 25%;

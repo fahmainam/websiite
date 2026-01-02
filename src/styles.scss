@@ -9,3 +9,15 @@ body.dark-theme .stat-card{
   min-height: 100vh;
   background-color: #121212; // Dark background for the whole page
 }
+@media (max-width: 768px) {
+  body.dark-theme #sidebar:not(.collapsed) {
+
+    top: 171px !important;
+   
+  }
+   body.dark-theme #sidebar.collapsed {
+
+    top: 171px !important;
+   
+  }
+}
