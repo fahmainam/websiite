@@ -156,10 +156,12 @@
 
     #sidebar:not(.collapsed) {
         left: 0;
-        top: 192px !important;
+        top: 210px !important;
         box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
     }
-
+.size-adjust{
+    font-size: 21px!important;
+}
     #sidebar.collapsed {
         left: auto !important;
         right: 0 !important;
