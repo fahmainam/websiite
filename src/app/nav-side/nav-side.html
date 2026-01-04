@@ -1,0 +1,137 @@
+<div class="sidebar-container" [class.collapsed]="isCollapsed()">
+
+  <!-- User Profile -->
+  <div class="user-profile d-flex flex-column align-items-center p-3">
+    <div class="user-name fw-bold">{{ userName }}</div>
+    <div class="user-role text-muted small">{{ userRole }}</div>
+  </div>
+
+  <!-- Search Box -->
+  <div class="search-box p-3">
+    <input
+      type="text"
+      [value]="searchTerm"
+      (input)="searchTerm = $any($event.target).value"
+      placeholder="البحث"
+      class="form-control form-control-sm"
+    />
+  </div>
+
+  <!-- Menu List -->
+  <ul class="menu-list list-unstyled p-0 m-0">
+
+    <ng-container *ngFor="let item of menuItems">
+
+      <!-- Single link without submenu -->
+      <li *ngIf="!item.subItems" class="menu-item">
+        <a
+          [routerLink]="item.link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="d-flex align-items-center text-decoration-none px-3 py-2"
+          [title]="item.label"
+          tabindex="0"
+        >
+          <i class="bi me-3 fs-5" [ngClass]="item.icon"></i>
+          <span *ngIf="!isCollapsed()">{{ item.label }}</span>
+        </a>
+      </li>
+
+      <!-- Item with submenu -->
+      <li *ngIf="item.subItems" class="menu-item">
+        <button
+          class="btn submenu-toggle d-flex align-items-center w-100 px-3 py-2"
+          (click)="toggleMenu(item.id)"
+          [attr.aria-expanded]="isOpen(item.id)"
+          aria-controls="{{item.id}}-submenu"
+        >
+          <i class="bi me-3 fs-5" [ngClass]="item.icon"></i>
+          <span *ngIf="!isCollapsed()">{{ item.label }}</span>
+          <i
+            class="bi ms-auto"
+            [ngClass]="{
+              'bi-chevron-down': !isOpen(item.id),
+              'bi-chevron-up': isOpen(item.id)
+            }"
+          ></i>
+        </button>
+
+        <!-- Submenu list -->
+        <ul
+          class="submenu list-unstyled ps-4"
+          id="{{item.id}}-submenu"
+          [class.show]="isOpen(item.id)"
+          *ngIf="isOpen(item.id)"
+        >
+          <ng-container *ngFor="let subItem of item.subItems">
+
+            <!-- Check if subItem has its own subItems (nested submenu) -->
+            <li *ngIf="!subItem.subItems" class="submenu-item">
+              <a
+                [routerLink]="subItem.link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center text-decoration-none py-1"
+                [title]="subItem.label"
+                tabindex="0"
+              >
+                <i class="bi me-2 fs-6" [ngClass]="subItem.icon"></i>
+                <span *ngIf="!isCollapsed()">{{ subItem.label }}</span>
+              </a>
+            </li>
+
+            <!-- Nested submenu recursion -->
+            <li *ngIf="subItem.subItems" class="submenu-item nested-submenu">
+              <button
+                class="btn submenu-toggle d-flex align-items-center w-100 py-1"
+                (click)="toggleMenu(subItem.id)"
+                [attr.aria-expanded]="isOpen(subItem.id)"
+                aria-controls="{{subItem.id}}-submenu"
+              >
+                <i class="bi me-2 fs-6" [ngClass]="subItem.icon"></i>
+                <span *ngIf="!isCollapsed()">{{ subItem.label }}</span>
+                <i
+                  class="bi ms-auto"
+                  [ngClass]="{
+                    'bi-chevron-down': !isOpen(subItem.id),
+                    'bi-chevron-up': isOpen(subItem.id)
+                  }"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu list-unstyled ps-4"
+                id="{{subItem.id}}-submenu"
+                [class.show]="isOpen(subItem.id)"
+                *ngIf="isOpen(subItem.id)"
+              >
+                <li *ngFor="let child of subItem.subItems" class="submenu-item">
+                  <a
+                    [routerLink]="child.link"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="d-flex align-items-center text-decoration-none py-1"
+                    [title]="child.label"
+                    tabindex="0"
+                  >
+                    <i class="bi me-2 fs-6" [ngClass]="child.icon"></i>
+                    <span *ngIf="!isCollapsed()">{{ child.label }}</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ng-container>
+        </ul>
+      </li>
+
+    </ng-container>
+
+  </ul>
+
+  <!-- Collapse Sidebar Button -->
+  <button class="btn btn-sm toggle-collapse-btn" (click)="toggleSidebar()">
+    <i class="bi" [ngClass]="isCollapsed() ? 'bi-arrow-bar-left' : 'bi-arrow-bar-right'"></i>
+  </button>
+
+</div>

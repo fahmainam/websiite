@@ -15,11 +15,12 @@ import { ThemeService } from './theme';
     CommonModule,
     RouterOutlet,
     Header,
-    SidebarComponent
+    SidebarComponent,
   ],
 template: `
     <app-header></app-header>
     <app-sidebar></app-sidebar>
+     <!-- <app-sidebar-component'></app-sidebar-component> -->
 
     <main class="main-content">
       <router-outlet></router-outlet>

@@ -1,6 +1,7 @@
 <div
   id="statsCarousel"
   class="carousel slide w-100"
+  [attr.id]="carouselId"
   data-bs-ride="carousel"
   *ngIf="slides && slides.length"
 >
@@ -52,10 +53,10 @@
   </div>
 
   <!-- Carousel Controls -->
-  <button class="carousel-control-prev slider-btn-prev" type="button" data-bs-target="#statsCarousel" data-bs-slide="prev">
+  <button class="carousel-control-prev slider-btn-prev" type="button" [attr.data-bs-target]="'#' + carouselId"  data-bs-slide="prev">
     <span><i class="bi bi-chevron-left"></i></span>
   </button>
-  <button class="carousel-control-next slider-btn-next" type="button" data-bs-target="#statsCarousel" data-bs-slide="next">
+  <button class="carousel-control-next slider-btn-next" type="button" [attr.data-bs-target]="'#' + carouselId"  data-bs-slide="next">
     <span><i class="bi bi-chevron-right"></i></span>
   </button>
 </div>

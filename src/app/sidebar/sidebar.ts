@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 import { CommonModule, NgIf } from '@angular/common'; // Required for dynamic styling like [style.transform]
 import { ProfileDropdownComponent } from '../profile-dropdown-component/profile-dropdown-component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true, // Ensure this is marked as standalone
-  imports: [ProfileDropdownComponent, CommonModule,RouterLink],
+  imports: [ProfileDropdownComponent, CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.scss']
 })
@@ -17,28 +17,30 @@ export class SidebarComponent {
   openMenus: { [key: string]: boolean } = {};
 
   menuItems = [
+  
     {
-      id: 'dash',
-      label: 'Dashboard',
-      icon: 'bi-speedometer2',
-      link: '/dashboard',
+      id: 'orders',
+      label: 'طلبات الإدارات',
+      icon: 'bi-building',
+      link: '/orders',
       subItems: [
-        { label: 'Analytics', link: '/dashboard/analytics' },
-        { label: 'E-commerce', link: '/dashboard/shop' }
+        { label: 'طلب أموال إضافية', link: '/orders/recent' },
+        { label: 'طلب موافقة شراء كاميرات', link: '/orders/recent' }
       ]
     },
     {
-      id: 'orders',
-      label: 'Orders',
+      id: 'orders1',
+      label: 'طلبات المستودع',
       icon: 'bi-cart3',
       link: '/orders',
       subItems: [
-        { label: 'Recent', link: '/orders/recent' }
+        { label: 'طلب أموال إضافية', link: '/orders/recent' },
+        { label: 'طلب موافقة شراء كاميرات', link: '/orders/recent' }
       ]
     },
     {
       id: 'customers',
-      label: 'Customers',
+      label: 'العملاء',
       icon: 'bi-people',
       link: '/customers',
       subItems: [
@@ -78,6 +80,8 @@ export class SidebarComponent {
     }
   ];
 
+
+  
  toggleSidebar() {
   this.isSidebarCollapsed = !this.isSidebarCollapsed;
 }

@@ -1,0 +1,86 @@
+.tab-animate {
+  animation: fadeIn 0.25s ease-in-out;
+}
+.nav-tabs .nav-link {
+  position: relative;
+  padding-right: 2rem;
+  color: dimgrey;
+  background-color: rgb(255, 255, 255);
+  
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  background-color: #ffffff;
+  border-color: #dee2e6 #dee2e6 #ffffff;
+  color: brown;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+  background-color: #ffffff;
+  border-color: #dee2e6 #dee2e6 #ffffff;
+}
+
+.close-btn {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  opacity: 1;
+  color: red;
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #000000;
+    pointer-events: auto;
+    background-color:  #ffffff ;
+    background-clip: padding-box;
+    border: 1px solid #8b8b8b!important;
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+.btn-close {
+    float: right;
+    right: 0;
+    width: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+/* Modal close button – force LEFT alignment */
+.modal-header {
+  position: relative;
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  left: 1rem;
+  right: auto;
+  margin: 0;
+}
+
+/* Optional: better click area */
+.modal-header .btn-close {
+  padding: 0.75rem;
+}
+
+/* Optional: hover feedback */
+.modal-header .btn-close:hover {
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

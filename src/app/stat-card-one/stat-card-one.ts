@@ -23,6 +23,7 @@ export class StatCardOne implements OnChanges {
 
   slides: StatsCardOne[][] = [];
   cardsPerSlide = 4;
+carouselId = 'statsCarousel-' + Math.random().toString(36).slice(2);
 
   ngOnChanges() {
     this.buildSlides();

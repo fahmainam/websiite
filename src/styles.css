@@ -577,6 +577,82 @@ body.dark-theme .rounded {
   border-radius: 14px 14px 14px 14px!important;
  
 } 
+/* ===============================
+   DARK THEME – Tabs
+   =============================== */
+
+body.dark-theme .tab-animate {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* Inactive tabs */
+body.dark-theme .nav-tabs .nav-link {
+  position: relative;
+  padding-right: 2rem;
+  color: #b0b0b0;
+  background-color: #1f1f1f!important;
+  border-color: #2a2a2a #2a2a2a #1f1f1f!important;
+}
+
+/* Active tab */
+body.dark-theme .nav-tabs .nav-item.show .nav-link,
+body.dark-theme .nav-tabs .nav-link.active {
+  background-color: #000000!important;
+  border-color: #3a3a3a #3a3a3a #2a2a2a;
+  color: #ff8a65; /* soft brown/orange accent */
+}
+body.dark-theme .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #ffffff;
+    pointer-events: auto;
+    background-color:  #242121 ;
+    background-clip: padding-box;
+    border: 1px solid #8b8b8b!important;
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+body.dark-theme .modal-header .btn-close {
+  filter: invert(1);
+}
+
+/* Hover state */
+body.dark-theme .nav-tabs .nav-link:hover {
+  color: #ffffff;
+  background-color: #262626!important;
+}
+
+/* Close button */
+body.dark-theme .close-btn {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  cursor: pointer;
+  color: #cccccc;
+}
+
+body.dark-theme .close-btn:hover {
+  opacity: 1;
+  color: #ff6b6b;
+}
+
+/* Optional: tab container border */
+body.dark-theme .nav-tabs {
+  border-bottom: 1px solid #2f2f2f;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 /* ==============================

@@ -35,6 +35,11 @@ export const routes: Routes = [
     path:   'app-sidebar',
     component: SidebarComponent
   },
+  
+  // {
+  //   path:   'app-sidebar',
+  //   component: SidebarComponent
+  // },
     
   
 ];

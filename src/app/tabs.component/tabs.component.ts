@@ -1,28 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { StatCardOne } from '../stat-card-one/stat-card-one';
-import { GraphOne } from '../graph-one/graph-one';
-import { Table } from '../table/table';
-import { Tabs } from '../tabs.component/tabs.component';
 
+type Tab = {
+  id: string;
+  title: string;
+  content: string;
+  closable: boolean;
+};
 
 @Component({
-  selector: 'app-mainbody',
+  selector: 'app-tabs',
   standalone: true,
-  imports: [
-    CommonModule,
-    GraphOne,
-    Table,
-    Tabs,
-    StatCardOne,
-    
-  
-  
-  ],
-  templateUrl: './mainbody.html',
-  styleUrls: ['./mainbody.css']
+  imports: [CommonModule,StatCardOne],
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.css'],
 })
-export class Mainbody {
+export class Tabs {
+
+  // ---------- DATA ----------
   statsCards = [
   {
     label: 'إجمالي المعاملات',
@@ -104,52 +100,60 @@ export class Mainbody {
     trendDirection: 'down' as const,
     period: 'منذ العام الماضي'
   }
-
-
-];
-
-
-  tabname = 'لوحة القيادة';     
-  tab1name = 'المشتريات';
-  tab2name = 'العهد';
-  tab3name = 'الطلبات';
-  tab4name = 'الفواتير';
-  tab5name = 'الموازنة';
-  tab6name = '+';
-
-  selectedFilter: 'ALL' | 'ACCEPTED' | 'REJECTED' = 'ALL';
-
-  orders = [
-    {
-      id: 'BDRS/2016/019/0008',
-      title: 'توريد أجهزة مودم',
-      products: '5 منتجات',
-      notes: '05',
-      status: 'ACCEPTED',
-      statusLabel: 'مقبول',
-      name: 'فارس أسامة طارق',
-      email: 'farestarek@moi.gov.qa',
-      date: '22 يناير 2025'
-    },
-    {
-      id: 'BDRS/2016/019/0009',
-      title: 'تجديد تراخيص',
-      products: '5 منتجات',
-      notes: '02',
-      status: 'REJECTED',
-      statusLabel: 'مرفوض',
-      name: 'حامد هادي نعيم',
-      email: 'hamedzalim@moi.gov.qa',
-      date: '20 يناير 2025'
-    }
   ];
 
-  get filteredOrders() {
-    if (this.selectedFilter === 'ALL') return this.orders;
-    return this.orders.filter(o => o.status === this.selectedFilter);
+  // ---------- SIGNALS ----------
+  activeTabId = signal<string>('home');
+
+  tabs = signal<Tab[]>([
+    { id: 'home', title: 'الرئيسية', content: 'home-content', closable: false },
+    { id: 'profile', title: 'أعمالي', content: 'table-content', closable: true }
+  ]);
+
+  tabToDelete = signal<Tab | null>(null);
+
+  // ---------- METHODS ----------
+  addNewTab() {
+    const index = this.tabs().length + 1;
+    const newTab: Tab = {
+      id: `tab-${index}`,
+      title: `طلب جديد ${index}`,
+      content: 'default-content',
+      closable: true
+    };
+
+    this.tabs.update(tabs => [...tabs, newTab]);
+    this.activeTabId.set(newTab.id);
   }
 
-  setFilter(filter: 'ALL' | 'ACCEPTED' | 'REJECTED') {
-    this.selectedFilter = filter;
+  setActiveTab(id: string) {
+    this.activeTabId.set(id);
+  }
+
+  requestCloseTab(event: MouseEvent, tab: Tab) {
+    event.stopPropagation();
+    if (!tab.closable) return;
+    this.tabToDelete.set(tab);
+  }
+
+  confirmClose() {
+    const tab = this.tabToDelete();
+    if (!tab) return;
+
+    const tabs = this.tabs();
+    const index = tabs.findIndex(t => t.id === tab.id);
+
+    this.tabs.set(tabs.filter(t => t.id !== tab.id));
+
+    if (this.activeTabId() === tab.id) {
+      const next = tabs[index + 1] || tabs[index - 1];
+      this.activeTabId.set(next.id);
+    }
+
+    this.tabToDelete.set(null);
+  }
+
+  cancelClose() {
+    this.tabToDelete.set(null);
   }
 }
