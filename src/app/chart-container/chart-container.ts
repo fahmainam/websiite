@@ -27,7 +27,7 @@ export class ChartContainer implements AfterViewInit {
 message: string = '';
 
 toggleMessage() {
-  this.message = this.message ? '' : 'Hello Angular';
+  this.message = this.message ? '' : 'Hello from ChartContainer!';
 }
   ngAfterViewInit(): void {
     this.createChart();

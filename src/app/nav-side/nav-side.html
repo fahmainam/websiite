@@ -18,22 +18,22 @@
   </div>
 
   <!-- Menu List -->
-  <ul class="menu-list list-unstyled p-0 m-0">
+  <ul class="menu-list font list-unstyled p-0 m-0">
 
     <ng-container *ngFor="let item of menuItems">
 
       <!-- Single link without submenu -->
-      <li *ngIf="!item.subItems" class="menu-item">
+      <li *ngIf="!item.subItems" class="menu-item ">
         <a
           [routerLink]="item.link"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          class="d-flex align-items-center text-decoration-none px-3 py-2"
+          class="d-flex align-items-center text-decoration-none px-3 py-2  "
           [title]="item.label"
           tabindex="0"
         >
-          <i class="bi me-3 fs-5" [ngClass]="item.icon"></i>
-          <span *ngIf="!isCollapsed()">{{ item.label }}</span>
+          <i class="bi me-3 fs-6" [ngClass]="item.icon"></i>
+          <span class="" *ngIf="!isCollapsed()">{{ item.label }}</span>
         </a>
       </li>
 
@@ -45,8 +45,8 @@
           [attr.aria-expanded]="isOpen(item.id)"
           aria-controls="{{item.id}}-submenu"
         >
-          <i class="bi me-3 fs-5" [ngClass]="item.icon"></i>
-          <span *ngIf="!isCollapsed()">{{ item.label }}</span>
+          <i class="bi me-3 fs-6" [ngClass]="item.icon"></i>
+          <span class="" *ngIf="!isCollapsed()">{{ item.label }}</span>
           <i
             class="bi ms-auto"
             [ngClass]="{

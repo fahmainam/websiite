@@ -19,7 +19,6 @@ body {
 ================================ */
 body.dark-theme .chart-container {
   background-color: #1e1e2f;
-  color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 body.dark-theme .chart-container canvas {

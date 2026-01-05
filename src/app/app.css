@@ -87,6 +87,10 @@
     left: 0 !important;
     width: 100% !important;
   }
+  .parent {
+    background-color: #f8fafc!important;
+        width: 0px;
+  }
 }
 .main-body-container {
          position: absolute;
@@ -96,5 +100,6 @@
 }
 .parent {
   background-color: #d6d7d7!important;
+  
   
 }

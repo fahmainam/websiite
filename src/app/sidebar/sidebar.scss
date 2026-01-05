@@ -153,7 +153,8 @@
   }
 
   #sidebar.collapsed {
-    left: -100%;
+    left: 0;
+        top: 170px;
   }
 
   #page-content-wrapper {
