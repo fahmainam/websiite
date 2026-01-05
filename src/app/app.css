@@ -1,4 +1,9 @@
+.main-body-container {
+ width: 100%;
+  margin-left: 0;
 
+  transition: margin-left 0.3s ease;
+}
 
 /* Sidebar base */
 .side-nav {
@@ -85,6 +90,11 @@
 }
 .main-body-container {
          position: absolute;
-   
+   background-color: #f8f9fa!important;
     top: 91px;
+   
+}
+.parent {
+  background-color: #d6d7d7!important;
+  
 }

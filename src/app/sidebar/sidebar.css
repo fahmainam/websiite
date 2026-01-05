@@ -164,7 +164,7 @@
 }
     #sidebar.collapsed {
         left: auto !important;
-        right: 0 !important;
+        left: 0 !important;
         top: 194px !important;
     }
 }

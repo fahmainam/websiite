@@ -14,12 +14,24 @@ body {
 }
 
 
-
-.dark-theme .card {
-  background-color: #1f1f1f;
-  border-color: #333;
-  color: #fff;
+/* ===============================
+   DARK THEME
+================================ */
+body.dark-theme .chart-container {
+  background-color: #1e1e2f;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
+body.dark-theme .chart-container canvas {
+  filter: brightness(0.9);
+}
+body.dark-theme .chart-container .chart-header h5 {
+  color: #ffffff;
+}
+body.dark-theme .chart-container .chart-header .year {
+  color: #ffffff;
+}
+
 .dark-theme input,
 .dark-theme textarea,
 .dark-theme select {
@@ -617,7 +629,9 @@ body.dark-theme .modal-content {
 body.dark-theme .modal-header .btn-close {
   filter: invert(1);
 }
-
+body.dark-theme .parent {
+  background-color: rgb(0, 0, 0)!important;
+}
 /* Hover state */
 body.dark-theme .nav-tabs .nav-link:hover {
   color: #ffffff;
@@ -794,7 +808,7 @@ body.dark-theme #sidebar .nav-link i {
 
 /* Hover */
 body.dark-theme #sidebar .nav-link:hover {
-  background-color: #1e293b;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -829,7 +843,7 @@ body.dark-theme .submenu-container {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
-  background-color: #1a1b1e;
+  background-color: #2a2b2c;
 }
 
 body.dark-theme .submenu-container.show {
@@ -844,7 +858,7 @@ body.dark-theme .submenu-container a {
 
 body.dark-theme .submenu-container a:hover {
   color: #e0e7ff !important;
-  background-color: #1e293b;
+  background-color: #000000;
   text-decoration: none !important;
 }
 
@@ -938,30 +952,43 @@ body.dark-theme .nav-link:active {
     background-color: #212121!important;
   }
 
- body:not(.dark-theme) #sidebar.collapsed{
-    left: auto !important;
-    right: 0 !important;
-    top: 171px !important;
-  }
+
   body.dark-theme #sidebar.collapsed{
     left: auto !important;
-    right: 0 !important;
+    left: 0 !important;
     top: 171px !important;
     background-color: #212121!important;
   }
-
+body.dark-theme .form-control:focus {
+  color: #000;
+  background-color: #fff;
+  border-color: #ff6600;
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 102, 0, 0.25);
+}
   body.dark-theme #wrapper {
     min-height: fit-content;
   }
+}
+   body.dark-theme .filter-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #000000;
+  font-size: 0.85rem;
+  background: #252020;
 }
 /* ================================
    CARD – DARK THEME
 ================================ */
 body.dark-theme .card {
-  background-color: #0f172a;
-  border: 1px solid #1e293b;
+  background-color: #313131;
+  border: 1px solid #000000;
   border-radius: 16px;
   overflow: hidden;
+  color: #e5e7eb!important;
 }
 
 body.dark-theme .card-header {
@@ -969,7 +996,7 @@ body.dark-theme .card-header {
   color: #e5e7eb;
   font-weight: 600;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #000000;
 }
 
 /* ================================
@@ -988,7 +1015,7 @@ body.dark-theme .table thead th {
   background: #020617;
   padding: 0.9rem 1rem;
   white-space: nowrap;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #000000;
 }
 
 body.dark-theme .table tbody td {
@@ -996,7 +1023,7 @@ body.dark-theme .table tbody td {
   vertical-align: middle;
   font-size: 0.9rem;
   white-space: nowrap;
-  border-color: #1e293b;
+  border-color: #000000;
 }
 
 body.dark-theme .table tbody tr {
@@ -1010,7 +1037,7 @@ body.dark-theme .table tbody tr:hover {
 
 /* Remove borders */
 body.dark-theme .table > :not(:last-child) > :last-child > * {
-  border-bottom-color: #1e293b;
+  border-bottom-color: #000000;
 }
 
 /* ================================
@@ -1098,7 +1125,7 @@ body.dark-theme .body-bg{
 
   body.dark-theme .table thead {
      display: block;
-    border-bottom: 1px solid #1e293b!important;
+    border-bottom: 1px solid #000000!important;
     padding: 0.75rem 0;
     color: #ffffff;
     
@@ -1106,7 +1133,7 @@ body.dark-theme .body-bg{
 
   body.dark-theme .table tbody tr {
     display: block;
-    border-bottom: 1px solid #1e293b!important;
+    border-bottom: 1px solid #000000!important;
     padding: 0.75rem 0;
   }
 

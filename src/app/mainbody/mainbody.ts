@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { StatCardOne } from '../stat-card-one/stat-card-one';
 import { GraphOne } from '../graph-one/graph-one';
 import { Table } from '../table/table';
 import { Tabs } from '../tabs.component/tabs.component';
+import { BarChartComponent } from '../bar-chart/bar-chart';
+import { ChartContainer } from "../chart-container/chart-container";
+import { Chart } from 'chart.js/auto';
 
 
 @Component({
@@ -14,15 +17,17 @@ import { Tabs } from '../tabs.component/tabs.component';
     GraphOne,
     Table,
     Tabs,
-    StatCardOne,
-    
-  
-  
-  ],
+    BarChartComponent,
+    ChartContainer
+],
   templateUrl: './mainbody.html',
   styleUrls: ['./mainbody.css']
 })
 export class Mainbody {
+
+@ViewChild('chartCanvas') canvas!: ElementRef<HTMLCanvasElement>;
+
+
   statsCards = [
   {
     label: 'إجمالي المعاملات',
@@ -153,3 +158,4 @@ export class Mainbody {
     this.selectedFilter = filter;
   }
 }
+

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 import { CommonModule, NgIf } from '@angular/common'; // Required for dynamic styling like [style.transform]
 import { ProfileDropdownComponent } from '../profile-dropdown-component/profile-dropdown-component';
@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   
   isSidebarCollapsed = false;
   openMenus: { [key: string]: boolean } = {};
@@ -80,11 +80,25 @@ export class SidebarComponent {
     }
   ];
 
+  ngOnInit() {
+    // Collapse sidebar by default on mobile (<= 768px)
+    this.isSidebarCollapsed = window.innerWidth <= 768;
+  }
 
-  
- toggleSidebar() {
-  this.isSidebarCollapsed = !this.isSidebarCollapsed;
-}
+  // Listen to window resize to automatically collapse/expand sidebar on mobile/desktop
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    const width = (event.target as Window).innerWidth;
+    if (width <= 468 && !this.isSidebarCollapsed) {
+      this.isSidebarCollapsed = true;
+    } else if (width > 468 && this.isSidebarCollapsed) {
+      this.isSidebarCollapsed = false;
+    }
+  }
+
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
 
   toggleMenu(menuId: string) {
     // If sidebar is collapsed, expand it first when clicking a menu
