@@ -9,7 +9,7 @@
     <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
       <div class="d-flex gap-2 align-items-center">
         <input type="text" class="form-control form-control-sm search-box" placeholder="بحث">
-        <button (click)="toggleMessage()" class="btn btn-outline-secondary btn-sm">التصفية</button>
+        <button class="btn btn-outline-secondary btn-sm">التصفية</button>
 
       </div>
 
@@ -21,11 +21,18 @@
     </div>
 
     <!-- Body -->
-    <div class="card-body p-0 d-flex">
-      <div class="chart-wrapper">
-            <p>{{ message }}</p>
-        <canvas id="assetsChart"></canvas>
-      </div>
+    <div class="card-body col-12 p-0 d-flex">
+     <div class="chart-card">
+  <div class="chart-header">
+    <h5>Financial Overview</h5>
+    <span class="year">2025</span>
+  </div>
+
+  <div class="chart-body">
+    <canvas #canvas></canvas>
+  </div>
+</div>
+
     </div>
 
   </div>

@@ -1,62 +1,58 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Chart,
-  BarController,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Tooltip,
-  Legend
+  ChartConfiguration,
+  registerables
 } from 'chart.js';
 
-Chart.register(
-  BarController,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Tooltip,
-  Legend
-);
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-chart-container',
+  standalone: true,
   templateUrl: './chart-container.html',
   styleUrls: ['./chart-container.css']
 })
-export class ChartContainer implements AfterViewInit {
-message: string = '';
+export class ChartContainerComponent implements AfterViewInit {
 
-toggleMessage() {
-  this.message = this.message ? '' : 'Hello from ChartContainer!';
-}
-  ngAfterViewInit(): void {
-    this.createChart();
+  @ViewChild('canvas')
+  canvas!: ElementRef<HTMLCanvasElement>;
+
+  private chart!: Chart;
+  private isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  createChart(): void {
-    const ctx = document.getElementById('assetsChart') as HTMLCanvasElement;
+  ngAfterViewInit() {
+    if (!this.isBrowser || !this.canvas) return;
 
-    new Chart(ctx, {
-      type: 'bar',
+    const config: ChartConfiguration<'line'> = {
+      type: 'line',
       data: {
         labels: [
-         'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
-          'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
         ],
         datasets: [
           {
-            label: 'Planned Assets',
-            data: [400, 450, 380, 500, 620, 700, 650, 480, 520, 750, 680, 800],
-            backgroundColor: '#cfe1ff',
-            borderRadius: 6,
-            stack: 'assets'
-          },
-          {
-            label: 'Actual Assets',
-            data: [300, 380, 320, 420, 550, 600, 580, 390, 460, 670, 600, 720],
-            backgroundColor: '#7aa7ff',
-            borderRadius: 6,
-            stack: 'assets'
+            label: 'Financial Value',
+            data: [1200, 1500, 1100, 1800, 1600, 2000, 1700, 2200, 2100, 2500, 2300, 2700],
+            borderColor: '#0d6efd',
+            backgroundColor: 'rgba(13,110,253,0.15)',
+            tension: 0.4,
+            fill: true,
+            pointRadius: 5,
+            pointHoverRadius: 7
           }
         ]
       },
@@ -65,38 +61,19 @@ toggleMessage() {
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            position: 'top',
-            labels: {
-              boxWidth: 14,
-              font: {
-                size: 12
-              }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: (context) => {
-                return `${context.dataset.label}: QAR${context.parsed.y}`;
-              }
-            }
+            display: true
           }
         },
         scales: {
-          x: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          },
           y: {
-            stacked: true,
-            beginAtZero: true,
             ticks: {
-              callback: (value) => `QAR${value}`
+              callback: value => `$${value}`
             }
           }
         }
       }
-    });
+    };
+
+    this.chart = new Chart(this.canvas.nativeElement, config);
   }
 }

@@ -1,3 +1,4 @@
+/* Card container */
 .chart-card {
   background: #ffffff;
   border-radius: 12px;
@@ -6,6 +7,7 @@
   width: 100%;
 }
 
+/* Header */
 .chart-header {
   display: flex;
   justify-content: space-between;
@@ -24,45 +26,44 @@
   color: #777;
 }
 
+/* Chart body */
 .chart-body {
   position: relative;
+  width: 100%;
   height: 320px;
 }
 
+/* Responsive heights */
 @media (max-width: 768px) {
   .chart-body {
     height: 260px;
   }
 }
+
 @media (max-width: 480px) {
   .chart-body {
     height: 220px;
   }
 }
 
-
-
-html, body {
-  height: 100%;
-}
-
-.card {
-  height: 100%;
-}
-
-.card-body {
-  flex: 1;
-}
-
-.chart-wrapper {
-  position: relative;
-  width: 100%;
-  height: 411px;
-  padding: 33px; /* optional, remove if you want edge-to-edge */
-}
-
-canvas {
+/* Canvas */
+.chart-body canvas {
   width: 100% !important;
   height: 100% !important;
   display: block;
 }
+/* Dark theme */
+body.dark-theme .chart-container {
+  width: 100%;
+  height: 320px;
+  padding: 1rem;
+  color: white;
+  border-radius: 12px;
+  background-color: var(--chart-bg, #1f1f1f);
+}       
+/* Ensure canvas scales correctly */
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+

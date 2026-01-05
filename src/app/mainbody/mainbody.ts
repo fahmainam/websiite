@@ -5,7 +5,7 @@ import { GraphOne } from '../graph-one/graph-one';
 import { Table } from '../table/table';
 import { Tabs } from '../tabs.component/tabs.component';
 import { BarChartComponent } from '../bar-chart/bar-chart';
-import { ChartContainer } from "../chart-container/chart-container";
+import { ChartContainerComponent } from "../chart-container/chart-container";
 import { Chart } from 'chart.js/auto';
 
 
@@ -18,7 +18,7 @@ import { Chart } from 'chart.js/auto';
     Table,
     Tabs,
     BarChartComponent,
-    ChartContainer
+    ChartContainerComponent
 ],
   templateUrl: './mainbody.html',
   styleUrls: ['./mainbody.css']
