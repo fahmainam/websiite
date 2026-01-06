@@ -5,6 +5,8 @@ import { Header } from './header/header';
 import { SidebarComponent } from './sidebar/sidebar';
 import { ThemeService } from './theme';
 import {  BarChartComponent } from './bar-chart/bar-chart';
+import { Table } from './table/table';
+
 
 
 
@@ -16,7 +18,7 @@ import {  BarChartComponent } from './bar-chart/bar-chart';
     CommonModule,
     RouterOutlet,
     Header,
-    SidebarComponent,BarChartComponent
+    SidebarComponent,BarChartComponent, Table
   ],
 template: `
     <app-header></app-header>

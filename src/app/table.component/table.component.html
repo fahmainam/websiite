@@ -1,0 +1,130 @@
+
+<div class=" table-main ">
+  <div class="page-header rtl col-12 d-flex justify-content-between align-items-center ">
+  <!-- Left side (search + filter) -->
+  <div class="header-left">
+    <div class="search-box">
+      <i class="bi bi-search"></i>
+      <input type="text" placeholder="بحث" />
+      <span class="shortcut">K</span>
+    </div>
+
+    <button class="filter-btn">
+      <i class="bi bi-sliders"></i>
+      التصفية
+    </button>
+  </div>
+
+  <!-- Right side (title + icons) -->
+  <div class="header-right">
+    <div class="header-icons">
+      <i class="bi bi-arrows-fullscreen"></i>
+      <i class="bi bi-layers"></i>
+    </div>
+    <h5 class="title">أعمالي</h5>
+  </div>
+</div>
+
+
+<div class="table-responsive ">
+  <table class="table custom-table align-middle">
+    
+    <thead>
+      
+      <tr>
+        <th>
+          <input type="checkbox" (change)="toggleAll($event)" />
+        </th>
+        <th>رقم المعاملة</th>
+        <th>البيان</th>
+        <th>عدد المنتجات</th>
+        <th>عدد الملاحظات</th>
+        <th>حالة الطلب</th>
+        <th>منشئ الطلب</th>
+        <th>تاريخ</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let row of data"
+        [class.selected]="row.selected"
+        (click)="selectRow(row)"
+      >
+        <!-- Checkbox -->
+        <td (click)="$event.stopPropagation()">
+          <input
+            type="checkbox"
+            [checked]="row.selected"
+            (change)="row.selected = $any($event.target).checked"
+          />
+        </td>
+
+        <!-- Reference -->
+        <td class="text-primary fw-semibold">
+          {{ row.ref }}
+        </td>
+
+        <!-- Title -->
+        <td>{{ row.title }}</td>
+
+        <!-- Products -->
+        <td>{{ row.products }}</td>
+
+        <!-- Notes -->
+        <td>
+          <i class="bi bi-chat-left-text"></i>
+          {{ row.notes }}
+        </td>
+
+        <!-- Status -->
+        <td>
+          <span class="badge" [ngClass]="row.statusClass">
+            {{ row.status }}
+          </span>
+        </td>
+
+        <!-- User -->
+        <td>
+          <div class="user">
+            <div class="avatar">
+              <i class="bi bi-person"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">{{ row.user }}</div>
+              <small class="text-muted">{{ row.email }}</small>
+            </div>
+          </div>
+        </td>
+
+        <!-- Date -->
+        <td>{{ row.date }}</td>
+
+        <!-- Actions (NEW – from your toolbar) -->
+        <td class="text-end" (click)="$event.stopPropagation()">
+          <div class="action-toolbar">
+            <button class="icon-btn" title="عرض">
+              <i class="bi bi-eye"></i>
+            </button>
+
+            <button class="icon-btn" title="إلغاء">
+              <i class="bi bi-x-circle"></i>
+            </button>
+
+            <button class="icon-btn" title="تراجع">
+              <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+
+            <button class="icon-btn active" title="اعتماد">
+              <i class="bi bi-check-circle"></i>
+            </button>
+          </div>
+        </td>
+         <td class="actions">⋮</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>

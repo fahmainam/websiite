@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavSide } from './nav-side';
+import { OrdersTableComponent } from './table.component';
 
-describe('NavSide', () => {
-  let component: NavSide;
-  let fixture: ComponentFixture<NavSide>;
+describe('TableComponent', () => {
+  let component: OrdersTableComponent;
+  let fixture: ComponentFixture<OrdersTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavSide]
+      imports: [OrdersTableComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavSide);
+    fixture = TestBed.createComponent(OrdersTableComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

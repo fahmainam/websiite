@@ -1,0 +1,227 @@
+/* Force custom row background (override Bootstrap) */
+.custom-table tbody tr>td {
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+/* Alternate rows */
+.custom-table tbody tr:nth-child(even)>td {
+  background-color: #f1f5f9;
+  /* clearly different */
+}
+
+/* Hover effect */
+.custom-table tbody tr:hover>td {
+  background-color: #d0e1ff;
+}
+
+/* Selected row (highest priority) */
+.custom-table tbody tr.selected>td {
+  background-color: #b6d4fe !important;
+}
+
+/* Header container */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.table-main {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: #49505733 0px 4px 12px;
+  width: 98%;
+  margin: 10px auto 20px auto;
+}
+
+/* Left side */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f6f8;
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 220px;
+}
+
+
+.search-box i {
+  color: #9aa0a6;
+  font-size: 14px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+}
+
+.shortcut {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0 6px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Filter button */
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f6f8;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+}
+
+.filter-btn i {
+  font-size: 14px;
+}
+
+.filter-btn:hover {
+  background: #e9ecef;
+}
+
+/* Right side */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icons i {
+  font-size: 18px;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.header-icons i:hover {
+  color: #000;
+}
+
+/* Title */
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* RTL */
+.rtl {
+  direction: ltr;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Actions */
+.action-icon {
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.action-icon:hover {
+  color: #000;
+}
+
+/* Badge tweaks */
+.badge {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* Toolbar container */
+.action-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+/* Icon buttons */
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #9aa0a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.icon-btn:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+/* Active (check icon) */
+.icon-btn.active {
+  color: #198754;
+}
+
+/* Disabled look (optional) */
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.action-toolbar {
+  direction: rtl;
+}
+
+.actions {
+  cursor: pointer;
+  font-size: larger;
+}
+
+/* User info */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  background: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

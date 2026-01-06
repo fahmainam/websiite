@@ -7,6 +7,7 @@ import { Tabs } from '../tabs.component/tabs.component';
 import { BarChartComponent } from '../bar-chart/bar-chart';
 import { ChartContainerComponent } from "../chart-container/chart-container";
 import { Chart } from 'chart.js/auto';
+import { OrdersTableComponent } from "../table.component/table.component";
 
 
 @Component({
@@ -18,7 +19,8 @@ import { Chart } from 'chart.js/auto';
     Table,
     Tabs,
     BarChartComponent,
-    ChartContainerComponent
+    ChartContainerComponent,
+    OrdersTableComponent
 ],
   templateUrl: './mainbody.html',
   styleUrls: ['./mainbody.css']
