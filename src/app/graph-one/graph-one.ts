@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { BarChartComponent } from '../bar-chart/bar-chart';
+import { ChartComponent } from '../bar-chart/bar-chart';
 
 @Component({
   selector: 'app-graph-one',
-  imports: [BarChartComponent],
+  imports: [ChartComponent],
   templateUrl: './graph-one.html',
   styleUrl: './graph-one.css',
 })

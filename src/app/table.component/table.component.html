@@ -9,10 +9,41 @@
       <span class="shortcut">K</span>
     </div>
 
-    <button class="filter-btn">
-      <i class="bi bi-sliders"></i>
-      التصفية
-    </button>
+<div class="dropdown">
+  <button
+    class="btn filter-btn dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+  >
+    <i class="bi bi-sliders"></i>
+    التصفية
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li>
+      <button class="dropdown-item" (click)="filterByStatus('all')">
+        الكل
+      </button>
+    </li>
+    <li>
+      <button class="dropdown-item" (click)="filterByStatus('accepted')">
+        مقبول
+      </button>
+    </li>
+    <li>
+      <button class="dropdown-item" (click)="filterByStatus('rejected')">
+        مرفوض
+      </button>
+    </li>
+    <li>
+      <button class="dropdown-item" (click)="filterByStatus('processing')">
+        قيد المعالجة
+      </button>
+    </li>
+  </ul>
+</div>
+
+
   </div>
 
   <!-- Right side (title + icons) -->
@@ -30,101 +61,79 @@
   <table class="table custom-table align-middle">
     
     <thead>
-      
-      <tr>
-        <th>
-          <input type="checkbox" (change)="toggleAll($event)" />
-        </th>
-        <th>رقم المعاملة</th>
-        <th>البيان</th>
-        <th>عدد المنتجات</th>
-        <th>عدد الملاحظات</th>
-        <th>حالة الطلب</th>
-        <th>منشئ الطلب</th>
-        <th>تاريخ</th>
-        <th></th>
-      </tr>
-    </thead>
+  <tr>
+    <th>
+      <input type="checkbox" (change)="toggleAll($event)" />
+    </th>
+    <th>رقم المعاملة</th>
+    <th>البيان</th>
+    <th>عدد المنتجات</th>
+    <th>عدد الملاحظات</th>
+    <th>حالة الطلب</th>
+    <th>منشئ الطلب</th>
+    <th>تاريخ</th>
+    <th></th>
+  </tr>
+</thead>
 
-    <tbody>
-      <tr
-        *ngFor="let row of data"
-        [class.selected]="row.selected"
-        (click)="selectRow(row)"
-      >
-        <!-- Checkbox -->
-        <td (click)="$event.stopPropagation()">
-          <input
-            type="checkbox"
-            [checked]="row.selected"
-            (change)="row.selected = $any($event.target).checked"
-          />
-        </td>
+   <tbody>
+  <tr
+    *ngFor="let row of filteredData"
+    [class.selected]="row.selected"
+    (click)="selectRow(row)"
+  >
+    <!-- Checkbox -->
+    <td (click)="$event.stopPropagation()">
+      <input
+        type="checkbox"
+        [checked]="row.selected"
+        (change)="row.selected = $any($event.target).checked"
+      />
+    </td>
 
-        <!-- Reference -->
-        <td class="text-primary fw-semibold">
-          {{ row.ref }}
-        </td>
+    <td class="text-primary fw-semibold">{{ row.ref }}</td>
+    <td>{{ row.title }}</td>
+    <td>{{ row.products }}</td>
+    <td>
+      <i class="bi bi-chat-left-text"></i>
+      {{ row.notes }}
+    </td>
 
-        <!-- Title -->
-        <td>{{ row.title }}</td>
+    <td>
+      <span class="badge" [ngClass]="row.statusClass">
+        {{ row.status }}
+      </span>
+    </td>
 
-        <!-- Products -->
-        <td>{{ row.products }}</td>
+    <td>
+      <div class="user">
+        <div class="avatar">
+          <i class="bi bi-person"></i>
+        </div>
+        <div>
+          <div class="fw-semibold">{{ row.user }}</div>
+          <small class="text-muted">{{ row.email }}</small>
+        </div>
+      </div>
+    </td>
 
-        <!-- Notes -->
-        <td>
-          <i class="bi bi-chat-left-text"></i>
-          {{ row.notes }}
-        </td>
+    <td>{{ row.date }}</td>
 
-        <!-- Status -->
-        <td>
-          <span class="badge" [ngClass]="row.statusClass">
-            {{ row.status }}
-          </span>
-        </td>
+    <td class="text-end" (click)="$event.stopPropagation()">
+      <div class="action-toolbar">
+        <button class="icon-btn"><i class="bi bi-eye"></i></button>
+        <button class="icon-btn"><i class="bi bi-x-circle"></i></button>
+        <button class="icon-btn"><i class="bi bi-arrow-counterclockwise"></i></button>
+        <button class="icon-btn active"><i class="bi bi-check-circle"></i></button>
+      </div>
+    </td>
 
-        <!-- User -->
-        <td>
-          <div class="user">
-            <div class="avatar">
-              <i class="bi bi-person"></i>
-            </div>
-            <div>
-              <div class="fw-semibold">{{ row.user }}</div>
-              <small class="text-muted">{{ row.email }}</small>
-            </div>
-          </div>
-        </td>
+    <td class="actions">⋮</td>
+  </tr>
+</tbody>
 
-        <!-- Date -->
-        <td>{{ row.date }}</td>
-
-        <!-- Actions (NEW – from your toolbar) -->
-        <td class="text-end" (click)="$event.stopPropagation()">
-          <div class="action-toolbar">
-            <button class="icon-btn" title="عرض">
-              <i class="bi bi-eye"></i>
-            </button>
-
-            <button class="icon-btn" title="إلغاء">
-              <i class="bi bi-x-circle"></i>
-            </button>
-
-            <button class="icon-btn" title="تراجع">
-              <i class="bi bi-arrow-counterclockwise"></i>
-            </button>
-
-            <button class="icon-btn active" title="اعتماد">
-              <i class="bi bi-check-circle"></i>
-            </button>
-          </div>
-        </td>
-         <td class="actions">⋮</td>
-      </tr>
-    </tbody>
   </table>
 </div>
 
 </div>
+

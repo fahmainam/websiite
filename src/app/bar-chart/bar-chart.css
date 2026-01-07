@@ -1,27 +1,34 @@
-/* ===============================
-   Chart container base
-================================ */
-.chart-container {
+.chart-card {
+  background: #ffffff; 
+    /* border: 1px solid #e6e7eb; */
+    border-radius: 12px;
+    padding: 16px 16px 8px;
+    /* box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06); */
+    width: 100%;
+}
+
+.chart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1f2a37;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: #5b6470;
+    font-size: 0.85rem;
+  }
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 360px; 
   width: 100%;
-  height: 340px;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 8px;
 }
-
-/* Ensure canvas scales correctly */
-.chart-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* ===============================
-   LIGHT THEME
-================================ */
-body.light-theme .chart-container {
-  background-color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-body.dark-theme .labels{
-  color: #ffffff;
-}       

@@ -1,14 +1,17 @@
 import { CommonModule, NgClass } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-orders-table',
+  standalone: true,
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
   imports: [NgClass, CommonModule, FormsModule]
 })
 export class OrdersTableComponent {
+
+  selectedStatus: string = 'all';
 
   data = [
     {
@@ -17,6 +20,7 @@ export class OrdersTableComponent {
       products: 5,
       notes: 5,
       status: 'مقبول',
+      statusKey: 'accepted',
       statusClass: 'bg-success-subtle text-success',
       user: 'فارس أسامة طارق',
       email: 'farestarik@moi.gov.qa',
@@ -28,7 +32,8 @@ export class OrdersTableComponent {
       title: 'تجديد تراخيص',
       products: 5,
       notes: 2,
-      status: 'تحت الإجراء',
+      status: 'قيد المعالجة',
+      statusKey: 'processing',
       statusClass: 'bg-warning-subtle text-warning',
       user: 'حامد هادي نجم',
       email: 'hamedn@moi.gov.qa',
@@ -40,8 +45,9 @@ export class OrdersTableComponent {
       title: 'ترقية وتحديث تكنولوجيا',
       products: 5,
       notes: 8,
-      status: 'تم الإنشاء',
-      statusClass: 'bg-info-subtle text-info',
+      status: 'مرفوض',
+      statusKey: 'rejected',
+      statusClass: 'bg-danger-subtle text-danger',
       user: 'جاسم محمد أحمد',
       email: 'jassem@moi.gov.qa',
       date: '24 يناير 2025',
@@ -49,12 +55,26 @@ export class OrdersTableComponent {
     }
   ];
 
+  filteredData = [...this.data];
+
+  // ✅ STATUS FILTER
+  filterByStatus(status: string) {
+    this.selectedStatus = status;
+
+    this.filteredData =
+      status === 'all'
+        ? [...this.data]
+        : this.data.filter(row => row.statusKey === status);
+  }
+
+  // ✅ ROW SELECTION
   selectRow(row: any) {
     row.selected = !row.selected;
   }
 
-  toggleAll(event: any) {
-    const checked = event.target.checked;
-    this.data.forEach(r => r.selected = checked);
+  // ✅ SELECT ALL
+  toggleAll(event: Event) {
+    const checked = (event.target as HTMLInputElement).checked;
+    this.filteredData.forEach(r => r.selected = checked);
   }
 }

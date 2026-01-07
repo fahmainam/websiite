@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { SidebarComponent } from './sidebar/sidebar';
 import { ThemeService } from './theme';
-import {  BarChartComponent } from './bar-chart/bar-chart';
+import { ChartComponent } from './bar-chart/bar-chart';
 import { Table } from './table/table';
 
 
@@ -18,7 +18,7 @@ import { Table } from './table/table';
     CommonModule,
     RouterOutlet,
     Header,
-    SidebarComponent,BarChartComponent, Table
+    SidebarComponent,ChartComponent, Table
   ],
 template: `
     <app-header></app-header>

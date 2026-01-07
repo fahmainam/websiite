@@ -4,7 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar';
 import { Routes } from '@angular/router';
 import { Mainbody } from './mainbody/mainbody';
 import { GraphOne } from './graph-one/graph-one';
-import { BarChartComponent } from './bar-chart/bar-chart';
+import { ChartComponent } from './bar-chart/bar-chart';
 
 
 export const routes: Routes = [
@@ -33,7 +33,7 @@ export const routes: Routes = [
   },
   {
     path: 'app-bar-chart',
-    component: BarChartComponent
+    component: ChartComponent
   },
   
   // {

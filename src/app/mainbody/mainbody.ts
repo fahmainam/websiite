@@ -4,9 +4,9 @@ import { StatCardOne } from '../stat-card-one/stat-card-one';
 import { GraphOne } from '../graph-one/graph-one';
 import { Table } from '../table/table';
 import { Tabs } from '../tabs.component/tabs.component';
-import { BarChartComponent } from '../bar-chart/bar-chart';
+import {  ChartComponent } from '../bar-chart/bar-chart';
 import { ChartContainerComponent } from "../chart-container/chart-container";
-import { Chart } from 'chart.js/auto';
+
 import { OrdersTableComponent } from "../table.component/table.component";
 
 
@@ -16,11 +16,12 @@ import { OrdersTableComponent } from "../table.component/table.component";
   imports: [
     CommonModule,
     GraphOne,
-    Table,
+    StatCardOne,
     Tabs,
-    BarChartComponent,
+    ChartComponent,
     ChartContainerComponent,
-    OrdersTableComponent
+    OrdersTableComponent,
+  
 ],
   templateUrl: './mainbody.html',
   styleUrls: ['./mainbody.css']

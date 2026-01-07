@@ -1,10 +1,10 @@
-/* Card container */
+/* Card wrapper */
 .chart-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 31px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   width: 100%;
+  height: 400px; /* give a fixed height or use a responsive unit */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -12,58 +12,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.chart-header h5 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.chart-header .year {
-  font-size: 13px;
-  color: #777;
-}
-
-/* Chart body */
+/* Chart container fills remaining space */
 .chart-body {
-  position: relative;
-  width: 100%;
-  height: 320px;
+  flex: 1; /* fills remaining vertical space */
+  min-height: 0; /* important for flex children */
+  display: flex; /* make canvas flex child */
 }
 
-/* Responsive heights */
-@media (max-width: 768px) {
-  .chart-body {
-    height: 260px;
-  }
-}
-
-@media (max-width: 480px) {
-  .chart-body {
-    height: 220px;
-  }
-}
-
-/* Canvas */
+/* Canvas always fills container */
 .chart-body canvas {
+  flex: 1; /* fill the chart-body */
   width: 100% !important;
   height: 100% !important;
   display: block;
 }
-/* Dark theme */
-body.dark-theme .chart-container {
-  width: 100%;
-  height: 320px;
-  padding: 1rem;
-  color: white;
-  border-radius: 12px;
-  background-color: var(--chart-bg, #1f1f1f);
-}       
-/* Ensure canvas scales correctly */
-.chart-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-

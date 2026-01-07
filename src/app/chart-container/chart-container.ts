@@ -1,40 +1,23 @@
-import {
-  Component,
-  AfterViewInit,
-  ViewChild,
-  ElementRef,
-  Inject,
-  PLATFORM_ID
-} from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import {
-  Chart,
-  ChartConfiguration,
-  registerables
-} from 'chart.js';
-
-Chart.register(...registerables);
+import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
+import { Chart, ChartConfiguration } from 'chart.js/auto';
 
 @Component({
   selector: 'app-chart-container',
-  standalone: true,
-  templateUrl: './chart-container.html',
-  styleUrls: ['./chart-container.css']
+  templateUrl: './chart-container.html'
 })
 export class ChartContainerComponent implements AfterViewInit {
+ngOnDestroy() {
+  this.chart?.destroy();
 
-  @ViewChild('canvas')
-  canvas!: ElementRef<HTMLCanvasElement>;
+}
 
-  private chart!: Chart;
-  private isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
+  @ViewChild('chartCanvas') chartCanvas!: ElementRef<HTMLCanvasElement>;
+  chart!: Chart<'line'>; // declare the chart instance
 
   ngAfterViewInit() {
-    if (!this.isBrowser || !this.canvas) return;
+    // Ensure the canvas is available
+    if (!this.chartCanvas) return;
 
     const config: ChartConfiguration<'line'> = {
       type: 'line',
@@ -67,13 +50,14 @@ export class ChartContainerComponent implements AfterViewInit {
         scales: {
           y: {
             ticks: {
-              callback: value => `$${value}`
+              callback: (value: any) => `$${value}`
             }
           }
         }
       }
     };
 
-    this.chart = new Chart(this.canvas.nativeElement, config);
+    this.chart = new Chart(this.chartCanvas.nativeElement, config);
   }
 }
+  
